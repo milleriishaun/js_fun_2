@@ -45,7 +45,6 @@ console.log(arr);
 let arr = [1, 3, 3, 4, 5, 6, 77, 6, 8, 77, 77];
 let sum = arr.reduce((a, b) => a + b);
 console.log(sum);
-*/
 
 // Flatten an array of arrays
 let flattened = [[0, 1], [2, 3], [4, 5]].reduceRight(function(a, b) {
@@ -53,3 +52,17 @@ let flattened = [[0, 1], [2, 3], [4, 5]].reduceRight(function(a, b) {
 }, []);
 console.log(flattened);
 // flattened is [4, 5, 2, 3, 0, 1]... if a and b are switched
+*/
+
+// Get an array of strings and numbers concatenated with "::".
+let elements = ['abc', 'def', 123, 456];
+
+// Call the reduce method, which calls the callback function
+// for each array element.
+let result = elements.reduce(appendCurrent);
+
+// Define the callback function.
+function appendCurrent(previousValue, currentValue) {
+  return previousValue + '::' + currentValue;
+}
+console.log(result);
