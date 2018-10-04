@@ -257,7 +257,6 @@ const flatten = function(A) {
     }, []);
 };
 console.log(flatten(arr));
-*/
 
 // Get an array of strings and numbers concatenated with "::".
 let elements = ['abc', 'def', 123, 456];
@@ -271,3 +270,69 @@ function appendCurrent(previousValue, currentValue) {
   return previousValue + '::' + currentValue;
 }
 console.log(result);
+*/
+
+// Find out the symmetrical differences of two or more arrays.
+// Reduce the following...:
+function symDiff(args) {
+  // convert args to an Array
+  var argsArray = Array.prototype.slice.call(arguments);
+
+  // now do the reduce magic!
+  argsArray.reduce(function(acc, item) {
+    return acc
+      .filter(function(itemInAcc) {
+        return item.indexOf(itemInAcc) === -1;
+      })
+      .concat(
+        item.filter(function(itemInItem) {
+          return acc.indexOf(itemInItem) === -1;
+        })
+      );
+  }, []);
+}
+
+/*
+// ...into the following:
+function symDiff(args) {
+  // convert args to an Array
+  var argsArray = Array.prototype.slice.call(arguments);
+
+  // now do the reduce magic!
+  argsArray.reduce(function(acc, item) {
+    var funWithFiltering = function(arr1, arr2) {
+      return arr1.filter(function(itemInArr1) {
+        return arr2.indexOf(itemInArr1) === -1;
+      });
+    };
+    return funWithFiltering(acc, item).concat(funWithFiltering(item, acc));
+  }, []);
+}
+
+*/
+
+let arr11 = [1, 2, 3, 4, 5, 6];
+let arr22 = [4, 5, 6, 78, 9, 9, 7];
+console.log(symDiff(arr11, arr22));
+
+// Then include the function to remove the duplicates
+function removeDuplicates(arr) {
+  arr.filter(function(item, index, self) {
+    // Keep only the first instance of the array, as given by indexOf()
+    // Remove other elements from Array
+    return self.indexOf(item) === index;
+  });
+}
+
+// console.log(removeDuplicates(symDiff(arr1, arr2)));
+
+// Tip:
+// Learn to use .reduce() as first nature, by thinking of using the
+// following, whenever you need a string or array manipulated:
+// return arr.reduce(function(acc, item) {
+//   _;
+// }, _);
+// Then, fill in the blanks.
+// Remember: When you are using reduce(),you are thinking in terms
+// of interaction of every element with another element. You are
+// forming the output by accumulating it from start to finish.
