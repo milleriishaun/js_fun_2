@@ -132,6 +132,7 @@ function largestOfFour(arr) {
   let result = [];
   for (let i = 0; i < arr.length; i++) {
     result.push(Math.max(...arr[i]));
+    // same as Math.max.apply(Math, arr[i])
   }
   return result;
 }
