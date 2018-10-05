@@ -1,3 +1,4 @@
+// my initial solution and the FCC solution
 function factorialize(num) {
   if (num === 0) {
     return 1;
