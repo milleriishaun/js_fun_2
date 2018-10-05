@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "program": "${file}",
-      "console": "integratedTerminal" // Add this to show array or object expansion
+      // "console": "integratedTerminal" // Add this to show array or object expansion
     }
   ]
 }

@@ -272,8 +272,12 @@ function appendCurrent(previousValue, currentValue) {
 console.log(result);
 */
 
+/*
+//=====================Broken below============================
 // Find out the symmetrical differences of two or more arrays.
 // Reduce the following...:
+// I would solve for symmetrical differences but I have found that
+// there is no point in doing that. Must find out why result is undefined.
 function symDiff(args) {
   // convert args to an Array
   var argsArray = Array.prototype.slice.call(arguments);
@@ -309,8 +313,6 @@ function symDiff(args) {
   }, []);
 }
 
-*/
-
 let arr11 = [1, 2, 3, 4, 5, 6];
 let arr22 = [4, 5, 6, 78, 9, 9, 7];
 console.log(symDiff(arr11, arr22));
@@ -325,14 +327,29 @@ function removeDuplicates(arr) {
 }
 
 // console.log(removeDuplicates(symDiff(arr1, arr2)));
+//=====================Broken above============================
+*/
 
+/*
 // Tip:
 // Learn to use .reduce() as first nature, by thinking of using the
 // following, whenever you need a string or array manipulated:
-// return arr.reduce(function(acc, item) {
-//   _;
-// }, _);
+return arr.reduce(function(acc, item) {
+  _;
+}, _);
 // Then, fill in the blanks.
 // Remember: When you are using reduce(),you are thinking in terms
 // of interaction of every element with another element. You are
 // forming the output by accumulating it from start to finish.
+*/
+
+// This creates a slug which is a shorter descriptive title for URLs
+function createSlug(str) {
+  return str
+    .split(' ')
+    .reduce(function(prev, next) {
+      return prev.concat([next.toLowerCase()]);
+    }, [])
+    .join('-');
+}
+console.log(createSlug("Rocko's Modern Life"));
