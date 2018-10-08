@@ -1,5 +1,5 @@
 /*
-*/
+
 // my initial solution
 // time: 20 mins.
 function findElement(arr, func) {
@@ -16,6 +16,7 @@ function findElement(arr, func) {
 }
 //note: this solution feels very bloated
 console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+*/
 
 /*
 // This is something interesting about the function arrow:
@@ -54,3 +55,12 @@ function Person() {
 
 var p = new Person();
 */
+
+// my solution 2
+// time: 20 mins. This solution was more concise.
+function findElement(arr, func) {
+  let even = arr.filter(func); //trip: don't forget to define variable
+  return even[0] ? even[0] : undefined;
+}
+//note: this solution feels very bloated
+console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
