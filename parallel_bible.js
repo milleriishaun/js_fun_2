@@ -131,7 +131,7 @@ function clickable(verses, linkArr2) {
   }
 }
 
-// console.log(getLink(verses));
+// Open the full console.log box so no broken links
 clickable(verses, getLink(verses));
 
 // // Connecting with God ................,

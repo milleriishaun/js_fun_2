@@ -76,11 +76,17 @@ function chunkArrayInGroups(arr, size) {
 // Advanced solution 3
 function chunkArrayInGroups(arr, size) {
   if (arr.length <= size) {
-    return [arr];
+    return [arr]; //The returned is the full final array
   } else {
     return [arr.slice(0, size)].concat(
       chunkArrayInGroups(arr.slice(size), size)
-    );
+    ); //note: return cut out sized arr, and use concat as glue, then
+    //note: replay the function with the rest of arr.
+    //note: Then if too small, return the full array.
+    //trip: The last cut happens here, but the slice
+    // of 0 to 2 just takes whatever's left and boxes it.console
+    // The concat of undefined is just ineffective.
+    // I do wonder what the specific rule is though.
   }
 } // I like this recursion
 
