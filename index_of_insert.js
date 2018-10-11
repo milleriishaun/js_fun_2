@@ -34,7 +34,7 @@ function getIndexToIns(arr, num) {
 }
 
 /*
-*/
+
 // Basic solution 2
 function getIndexToIns(arr, num) {
   // Find my place in this sorted array.
@@ -48,9 +48,6 @@ function getIndexToIns(arr, num) {
   return count; // the above equals num's position in a sorted array
 }
 
-/*
-*/
-/*
 // Basic solution 3
 function getIndexToIns(arr, num) {
   arr.sort(function(a, b) {
@@ -64,7 +61,7 @@ function getIndexToIns(arr, num) {
 
   return i;
 }
-*/
+
 
 // Intermediate solution 1
 function getIndexToIns(arr, num) {
@@ -95,7 +92,7 @@ function getIndexToIns(arr, num) {
     .sort((a, b) => a - b)
     .indexOf(num);
 }
-
+*/
 console.log(getIndexToIns([10, 20, 30, 40, 50], 30)); //2
 console.log(getIndexToIns([5, 3, 20, 3], 5)); //2
 console.log(getIndexToIns([2, 20, 10], 19)); //2
