@@ -19,6 +19,7 @@ function getIndexToIns(arr, num) {
 */
 
 /*
+*/
 
 // Basic solution
 function getIndexToIns(arr, num) {
@@ -32,8 +33,8 @@ function getIndexToIns(arr, num) {
 
   return arr.length;
 }
-*/
 
+/*
 // Basic solution 2
 function getIndexToIns(arr, num) {
   // Find my place in this sorted array.
@@ -46,7 +47,7 @@ function getIndexToIns(arr, num) {
   } // counts how many array numbers are smaller than num
   return count; // the above equals num's position in a sorted array
 }
-/*
+
 // Basic solution 3
 function getIndexToIns(arr, num) {
   arr.sort(function(a, b) {
@@ -60,7 +61,6 @@ function getIndexToIns(arr, num) {
 
   return i;
 }
-
 
 // Intermediate solution 1
 function getIndexToIns(arr, num) {
