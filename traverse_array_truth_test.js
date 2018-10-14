@@ -56,6 +56,7 @@ function Person() {
 var p = new Person();
 */
 
+/*
 // my solution 2
 // time: 20 mins. This solution was more concise.
 function findElement(arr, func) {
@@ -64,7 +65,10 @@ function findElement(arr, func) {
 }
 //note: this solution feels very bloated
 console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+*/
 
+/*
+*/
 // Basic solution
 function findElement(arr, func) {
   let num = 0;
