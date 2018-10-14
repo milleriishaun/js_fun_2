@@ -9,14 +9,14 @@ function repeatStringNumTimes(str, num) {
 }
 
 console.log(repeatStringNumTimes('abc', 3));
+*/
 
-
+/*
 // my solution attempt 2
 // fail time: 1 min. I don't recall any JS repeater string methods.
 
 // my solution attempt 3
 // fail time: 10 mins. Actually, recall recursion... but slice only subtracts.
-
 function repeatStringNumTimes(str, num) {
   if (num > 0) {
     return repeatStringNumTimes(str.slice(str), num - 1);
@@ -27,9 +27,9 @@ function repeatStringNumTimes(str, num) {
   }
 }
 console.log(repeatStringNumTimes('abc', 3));
+*/
 
-
-
+/*
 // Basic solution
 function repeatStringNumTimes(str, num) {
   var accumulatedStr = '';
@@ -41,18 +41,19 @@ function repeatStringNumTimes(str, num) {
 
   return accumulatedStr;
 }
-
-// Intermediate solution
-function repeatStringNumTimes(str, num) {
-  if(num < 0)
-    return "";
-  if(num === 1)
-    return str;
-  else
-    return str + repeatStringNumTimes(str, num - 1);
-}
 */
 
+/*
+// Intermediate solution
+function repeatStringNumTimes(str, num) {
+  if (num < 0) return '';
+  if (num === 1) return str;
+  else return str + repeatStringNumTimes(str, num - 1);
+}
+console.log(repeatStringNumTimes('abc', 3));
+*/
+
+/*
 // Advanced solution: Declarative... my original solution but can't use repeat()
 // This solution is a lie.
 function repeatStringNumTimes(str, num) {
@@ -60,3 +61,4 @@ function repeatStringNumTimes(str, num) {
 }
 
 repeatStringNumTimes('abc', 3);
+*/
