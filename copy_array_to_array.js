@@ -1,3 +1,4 @@
+/*
 // my initial solution
 //failed because goal was unclear
 //note: it does do its job correctly
@@ -7,8 +8,8 @@ function frankenSplice(arr1, arr2, n) {
 }
 
 console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
+*/
 
-/*
 // my second solution
 //time: 40 mins //trip: could not understand splice inserting after delete.
 //trip: could not understand slice makes copy of an array
@@ -19,7 +20,6 @@ function frankenSplice(arr1, arr2, n) {
 }
 
 console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
-*/
 
 /*
 // Basic solution
