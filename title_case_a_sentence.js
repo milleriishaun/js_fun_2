@@ -34,6 +34,7 @@ String.prototype.replaceAt = function(index, character) {
 };
 */
 
+/*
 // Basic solution
 function titleCase(str) {
   var newTitle = str.split(' ');
@@ -45,6 +46,7 @@ function titleCase(str) {
   }
   return updatedTitle.join(' ');
 }
+*/
 
 /*
 // Intermediate solution

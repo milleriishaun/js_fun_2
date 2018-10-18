@@ -1,6 +1,6 @@
 /*
 // my initial solution
-// time: 60mins. // not sure how to go about it actually.
+// fail time: 60mins. // not sure how to go about it actually.
 function mutation(arr) {
   arr[0].toLowerCase();
   arr[1].toLowerCase();
@@ -49,10 +49,10 @@ function mutation(arr) {
 
 /*
 // my third solution
-time: 5 mins
+// time: 5 mins
 function mutation(arr) {
-  test = arr[1].toLowerCase();
-  target = arr[0].toLowerCase();
+  let test = arr[1].toLowerCase();
+  let target = arr[0].toLowerCase();
   for (let i = 0; i < test.length; i++) {
     if (target.indexOf(test[i]) === -1) {
       return false;
@@ -96,7 +96,7 @@ function mutation(arr) {
     });
 }
 // I like this solution, but it is very involved...
-// I want to attempt this solution on 10/15/2018, 1 week.
+// I want to attempt this solution on 10/21/2018, 1 week.
 
 console.log(mutation(['hello', 'hey']));
 console.log(mutation(['hello', 'neo']));
