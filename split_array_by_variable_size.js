@@ -89,7 +89,7 @@ function chunkArrayInGroups(arr, size) {
     // I do wonder what the specific rule is though.
   }
 } // I like this recursion
-
+s;
 console.log(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2));
 console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
 console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2));
