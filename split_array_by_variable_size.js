@@ -49,7 +49,9 @@ function chunkArrayInGroups(arr, size) {
   }
   return arr2;
 } //note: this does not loop through arr, as in instructions
+*/
 
+/*
 // Advanced solution 1
 function chunkArrayInGroups(arr, size) {
   // Break it up.
@@ -62,7 +64,9 @@ function chunkArrayInGroups(arr, size) {
   }
   return newArr;
 }
+*/
 
+/*
 // Advanced solution 2
 function chunkArrayInGroups(arr, size) {
   var newArr = [];
