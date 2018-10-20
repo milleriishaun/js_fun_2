@@ -134,6 +134,35 @@ function clickable(verses, linkArr2) {
 // Open the full console.log box so no broken links
 clickable(verses, getLink(verses));
 
+document.getElementById('demo').innerHTML;
+
+// Get the first stylesheet associated with
+// this document.
+var Sheets = document.styleSheets[0];
+// Obtain the rules on that sheet.
+var Rules = Sheets.cssRules;
+// Display each of the rules onscreen.
+for (var i = 0; i < Rules.length; i++) {
+  // Obtain a single rule and write the name
+  // of that rule onscreen.
+  var Rule = Rules[i];
+  document.write('<p>' + Rule.selectorText + '<br />');
+  // Obtain a list of styles for the rule.
+  var Styles = Rule.style;
+  // Display each of the styles onscreen.
+  for (var j = 0; j < Styles.length; j++) {
+    // Obtain the name of a property.
+    var PropertyName = Styles[j];
+    // Use the property name to locate its value
+    // and display both name and value.
+    document.write(
+      PropertyName + ' : ' + Styles.getPropertyValue(PropertyName) + '<br />'
+    );
+  }
+  // End the document rule printout.
+  document.write('</p>');
+}
+
 // // Connecting with God ................,
 // Psalm 119:105,
 // 2 Tim 3:16-17,
