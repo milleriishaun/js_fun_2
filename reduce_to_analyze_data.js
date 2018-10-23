@@ -124,6 +124,7 @@ var watchList = [
   }
 ];
 
+/*
 // Add your code below this line
 // my initial attempt
 // fail time: 30 mins //watchList.map(...).filter(...).reduce(...).map is not a function
@@ -137,10 +138,20 @@ var averageRating = watchList
   .reduce((acc, prev) => {
     return acc + prev;
   })
-  .map(item2 => {
+  .filter(item2 => {
     // this part fails... w/o it, get 2 obj arrays
     return item2 / acc.length;
   });
+
+*/
+
+// Solution
+let averageRating =
+  watchList
+    .filter(x => x.Director === 'Christopher Nolan')
+    .map(x => Number(x.imdbRating))
+    .reduce((acc, item) => acc + item) /
+  watchList.filter(x => x.Director === 'Christopher Nolan').length;
 
 // Add your code above this line
 
