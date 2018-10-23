@@ -64,7 +64,6 @@ const copy = array => [...array];
 let array = [1, 2, 3, 4, 5];
 let copied = copy(array);
 copied.push(6);
-
 array; // [1,2,3,4,5]
 copied; // [1,2,3,4,5,6]
 
@@ -97,7 +96,6 @@ reverse(array); // [5,4,3,2,1]
 const array = [1, 2, 3, 4, 5];
 const newArray = array.reverse(); // [5,4,3,2,1]
 array; // [5,4,3,2,1]
-
 // using the reverse method we just created
 const array2 = [1, 2, 3, 4, 5];
 const newArray2 = reverse(array2); // [5,4,3,2,1]
@@ -142,7 +140,6 @@ isArray(array); // true
 
 // Flatten
 // Combines nested arrays into a single array.
-
 const flatten = ([x, ...xs]) =>
   def(x)
     ? isArray(x)
@@ -182,7 +179,6 @@ map([1, 2, 3], double); // [2,4,6]
 // Filter
 // From MDN: “…creates a new array with all elements that pass the
 // test implemented by the provided function.”
-
 const filter = ([x, ...xs], fn) => {
   if (undef(x)) return [];
   if (fn(x)) {
@@ -192,14 +188,12 @@ const filter = ([x, ...xs], fn) => {
   }
 };
 // Which can be simplified as:
-
 const filter = ([x, ...xs], fn) =>
   def(x) ? (fn(x) ? [x, ...filter(xs, fn)] : [...filter(xs, fn)]) : [];
 //
 const even = x => x % 2 === 0;
 const odd = (x = !even(x));
 const array = [1, 2, 3, 4, 5];
-
 filter(array, even); // [2,4]
 filter(array, odd); // [1,3,5]
 
