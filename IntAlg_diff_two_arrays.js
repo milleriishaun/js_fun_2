@@ -93,3 +93,27 @@ function uniq(a) {
   });
 }
 */
+
+// my solution 3
+// there must be an easier way to solve this in a way I understand
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //supposed to be [4]
+console.log(
+  diffArray(
+    ['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
+    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
+  )
+); //supposed to be ["pink wool"]
+
+console.log(
+  diffArray(
+    ['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
+    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
+  )
+); //supposed to be ["diorite", "pink wool"]
+
+console.log(
+  diffArray(
+    ['andesite', 'grass', 'dirt', 'dead shrub'],
+    ['andesite', 'grass', 'dirt', 'dead shrub']
+  )
+); //supposed to be []
