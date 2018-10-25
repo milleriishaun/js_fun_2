@@ -105,15 +105,13 @@ function uniq(a) {
 // time: 2 hours... this was a nightmare because failure to understand loops.
 //fail:in dire need of practice for this algorithm since it is so important.
 function diffArray(arr1, arr2) {
-  let newArr1 = arr1.slice();
-  let newArr2 = arr2.slice();
   let newArr = [];
-  for (let i = 0; i < Math.max(newArr1.length, newArr2.length); i++) {
-    if (newArr1.indexOf(newArr2[i]) === -1 && newArr2[i] !== undefined) {
-      newArr.push(newArr2[i]);
+  for (let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
+    if (arr1.indexOf(arr2[i]) === -1 && arr2[i] !== undefined) {
+      newArr.push(arr2[i]);
     }
-    if (newArr2.indexOf(newArr1[i]) === -1 && newArr1[i] !== undefined) {
-      newArr.push(newArr1[i]);
+    if (arr2.indexOf(arr1[i]) === -1 && arr1[i] !== undefined) {
+      newArr.push(arr1[i]);
     }
   }
   // let uniq = a => [...new Set(a)]; // this is a partial function
@@ -148,20 +146,16 @@ console.log(
 // my solution 4(after looking at 3 hints)
 // time: 30 mins.
 function diffArray(arr1, arr2) {
-  let newArr1 = arr1.slice();
-  let newArr2 = arr2.slice();
-  let newArr = newArr1.concat(newArr2);
-  let newEstArr = [];
-  for (let i = 0; i < newArr.length; i++) {
-    if (!newArr1.includes(newArr[i])) {
-      newEstArr.push(newArr[i]);
-    } else if (!newArr2.includes(newArr[i])) {
-      newEstArr.push(newArr[i]);
-    } else {
-      // console.log('something broken');
+  let comboArr = arr1.concat(arr2);
+  let newArr = [];
+  for (let i = 0; i < comboArr.length; i++) {
+    if (!arr1.includes(comboArr[i])) {
+      newArr.push(comboArr[i]);
+    } else if (!arr2.includes(comboArr[i])) {
+      newArr.push(comboArr[i]);
     }
   }
-  return newEstArr;
+  return newArr;
 }
 
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //supposed to be [4]
@@ -265,6 +259,7 @@ function diffArray(arr1, arr2) {
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 */
 
+/*
 // Advanced Solution2: Declarative Approach
 function diffArray(arr1, arr2) {
   return [...diff(arr1, arr2), ...diff(arr2, arr1)];
@@ -275,3 +270,4 @@ function diffArray(arr1, arr2) {
 }
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 //I like this solution because it separates the function into bitesize
+*/

@@ -57,6 +57,7 @@ console.log(sumAll([10, 5])); //45
 
 // wow, my solution failed big time... could have just iterated over loop
 
+/*
 // Basic Solution:
 function sumAll(arr) {
   var max = Math.max(arr[0], arr[1]);
@@ -72,6 +73,7 @@ console.log(sumAll([1, 4])); //10
 console.log(sumAll([4, 1])); //10
 console.log(sumAll([5, 10])); //45
 console.log(sumAll([10, 5])); //45
+*/
 
 /*
 // Intermediate Solution:
