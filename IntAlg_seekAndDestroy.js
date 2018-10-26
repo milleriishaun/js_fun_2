@@ -125,6 +125,7 @@ console.log(Array.from([1, 2, 3], x => x + x));
 // expected output: Array [2, 4, 6]
 */
 
+/*
 // Advanced Solution
 const destroyer = (arr, ...args) => arr.filter(i => !args.includes(i));
 //note: this is a seemingly perfect solution(1 line, ES6, easily read)
@@ -134,3 +135,37 @@ const destroyer = (arr, ...args) => arr.filter(i => !args.includes(i));
 //note as the args array).
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1, 1]
 console.log(destroyer([2, 3, 2, 3], 2, 3)); // []
+*/
+
+// Practice time 1
+function destroyer(arr) {
+  return arr;
+}
+
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1, 1]
+console.log(destroyer([2, 3, 2, 3], 2, 3)); // []
+console.log(
+  destroyer(
+    [
+      'possum',
+      'trollo',
+      12,
+      'safari',
+      'hotdog',
+      92,
+      65,
+      'grandma',
+      'bugati',
+      'trojan',
+      'yacht'
+    ],
+    'yacht',
+    'possum',
+    'trollo',
+    'safari',
+    'hotdog',
+    'grandma',
+    'bugati',
+    'trojan'
+  )
+); // [12,92,65]

@@ -271,3 +271,31 @@ function diffArray(arr1, arr2) {
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 //I like this solution because it separates the function into bitesize
 */
+
+// Practice time 1
+function diffArray(arr1, arr2) {
+  let newArr = [];
+  return newArr;
+}
+
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //supposed to be [4]
+console.log(
+  diffArray(
+    ['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
+    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
+  )
+); //supposed to be ["pink wool"]
+
+console.log(
+  diffArray(
+    ['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
+    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
+  )
+); //supposed to be ["diorite", "pink wool"]
+
+console.log(
+  diffArray(
+    ['andesite', 'grass', 'dirt', 'dead shrub'],
+    ['andesite', 'grass', 'dirt', 'dead shrub']
+  )
+); //supposed to be []

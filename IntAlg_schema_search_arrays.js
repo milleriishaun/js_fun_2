@@ -301,7 +301,7 @@ function whatIsInAName(collection, source) {
 //transitioning from return to loops, and loop resulting returns to filter.
 //note: I do understand now that filter simply asks if true or false for each
 //note: item at hand.
-*/
+
 
 console.log(
   whatIsInAName(
@@ -353,6 +353,7 @@ console.log(
 
 console.log(whatIsInAName([{ a: 1, b: 2, c: 3 }], { a: 1, b: 9999, c: 3 }));
 //  [] 6
+*/
 
 // Code Explanation:
 // We filter through the array using .filter().
@@ -383,6 +384,7 @@ function whatIsInAName(collection, source) {
 // Finally, we reduce to Boolean value to be returned for the .every() method.
 */
 
+/*
 // Advanced Solution
 function whatIsInAName(collection, source) {
   var srcKeys = Object.keys(source);
@@ -411,3 +413,58 @@ function whatIsInAName(collection, source) {
 // Then we reduce the mapped Boolean values to a single Boolean
 // that indicates whether all srcKeys pass the conditions checked above.
 // This single Boolean will be used to filter through the collection.
+*/
+
+// Practice time 1
+function whatIsInAName(collection, source) {}
+
+console.log(
+  whatIsInAName(
+    [
+      { first: 'Romeo', last: 'Montague' },
+      { first: 'Mercutio', last: null },
+      { first: 'Tybalt', last: 'Capulet' }
+    ],
+    { last: 'Capulet' }
+  )
+);
+// [{ first: "Tybalt", last: "Capulet" }] 1
+
+console.log(
+  whatIsInAName([{ apple: 1 }, { apple: 1 }, { apple: 1, bat: 2 }], {
+    apple: 1
+  })
+);
+//  [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }] 2
+
+console.log(
+  whatIsInAName(
+    [{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
+    { apple: 1, bat: 2 }
+  )
+);
+//  [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }] 3
+
+console.log(
+  whatIsInAName(
+    [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
+    { apple: 1, cookie: 2 }
+  )
+);
+//  [{ "apple": 1, "bat": 2, "cookie": 2 }] 4
+
+console.log(
+  whatIsInAName(
+    [
+      { apple: 1, bat: 2 },
+      { apple: 1 },
+      { apple: 1, bat: 2, cookie: 2 },
+      { bat: 2 }
+    ],
+    { apple: 1, bat: 2 }
+  )
+);
+//  [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }] 5
+
+console.log(whatIsInAName([{ a: 1, b: 2, c: 3 }], { a: 1, b: 9999, c: 3 }));
+//  [] 6
