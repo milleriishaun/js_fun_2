@@ -137,13 +137,78 @@ console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1, 1]
 console.log(destroyer([2, 3, 2, 3], 2, 3)); // []
 */
 
+/*
 // Practice time 1
+// fail time: too early to think correctly
 function destroyer(arr) {
-  return arr;
+  let args = [...arguments];
+  console.log(args);
+  return arr.filter(function(item, args) {
+    for (let i = 1; i < args.length; i++) {
+      if (args[i] === item) {
+        delete item;
+        i = -1;
+      }
+    }
+    return item;
+  });
 }
+*/
+
+/*
+// time: 40 mins
+// Bonus points for discovering own FP solution, similar to Basic Solution
+function destroyer(arr) {
+  let args = Array.prototype.slice.call(arguments);
+  return arr.filter(val => {
+    return !args.includes(val);
+  });
+}
+*/
+
+/*
+// time: 10 mins, understood fully now
+function destroyer(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < Array.prototype.slice.call(arguments).length; j++) {
+      if (arr[i] === Array.prototype.slice.call(arguments)[j]) {
+        delete arr[i];
+      }
+    }
+  }
+  return arr.filter(Boolean);
+}
+*/
+
+/*
+// time: 15 mins
+function destroyer(arr) {
+  args = Array.from(arguments, ).slice();
+  return arr.filter(item => {
+    return !args.includes(item);
+  });
+}
+// // example uses of Array.from()
+// // syntax: Array.from(object, mapFunction, thisValue)
+// // Parameter	Description:
+// // object,	Required. The object to convert to an array
+// // mapFunction,	Optional. A map function to call on each item of the array
+// // thisValue,	Optional. A value to use as this when executing the mapFunction
+// console.log(Array.from('foo'));
+// // expected output: Array ["f", "o", "o"]
+// console.log(Array.from([1, 2, 3], x => x + x));
+// // expected output: Array [2, 4, 6]
+*/
+
+// time: 5 mins, while glancing 2 times at the Advanced Solution
+// need individual practice.... how about 10am on 10/31/2018
+const destroyer = (arr, ...args) => arr.filter(item => !args.includes(item));
 
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1, 1]
+console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)); // [1, 5, 1]
+console.log(destroyer([3, 5, 1, 2, 2], 2, 3, 5)); // [1]
 console.log(destroyer([2, 3, 2, 3], 2, 3)); // []
+console.log(destroyer(['tree', 'hamburger', 53], 'tree', 53)); // ["hamburger"]
 console.log(
   destroyer(
     [

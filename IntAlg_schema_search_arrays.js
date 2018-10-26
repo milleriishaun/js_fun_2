@@ -415,8 +415,60 @@ function whatIsInAName(collection, source) {
 // This single Boolean will be used to filter through the collection.
 */
 
+/*
 // Practice time 1
-function whatIsInAName(collection, source) {}
+// fail time: 20 mins
+// it was close, but I needed more practice/understanding
+function whatIsInAName(collection, source) {
+  let srcKeys = Object.keys(source);
+  return collection.filter(obj => {
+    return srcKeys.every(match => {
+      return obj.hasOwnProperty(match) && obj[match] === source[match];
+      //fail: tripped up on the comparison since I was not thinking right
+      //note: I think i would have need full immersion in order to get this
+      //note: looking at solutions... I see every(obj) = map(obj) + reduce(a && b)
+    });
+  });
+}
+*/
+
+/*
+// time: 10 mins
+// same as Basic Solution... notice there is a benefit of when narrowing down,
+// to use the false inner value, then use the true outer result.
+// I need practice with this.
+function whatIsInAName(collection, source) {
+  srcKeys = Object.keys(source);
+  return collection.filter(obj => {
+    for (let i = 0; i < srcKeys.length; i++) {
+      if (
+        source[srcKeys[i]] !== obj[srcKeys[i]] ||
+        !obj.hasOwnProperty(srcKeys[i])
+      ) {
+        return false;
+      }
+    }
+    return true;
+  });
+}
+*/
+// time: 15 mins
+function whatIsInAName(collection, source) {
+  let srcKeys = Object.keys(source);
+  return collection.filter(obj => {
+    for (let i = 0; i < srcKeys.length; i++) {
+      // don't use if(a && b) then true, b/c that
+      // might be possible w/o correct values
+      if (
+        !obj.hasOwnProperty(srcKeys[i]) ||
+        obj[srcKeys[i]] !== source[srcKeys[i]]
+      ) {
+        return false;
+      }
+    }
+    return true;
+  });
+}
 
 console.log(
   whatIsInAName(

@@ -272,10 +272,50 @@ console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 //I like this solution because it separates the function into bitesize
 */
 
+/*
 // Practice time 1
+// time: 30 mins //hard to keep track of information/FP
 function diffArray(arr1, arr2) {
   let newArr = [];
+  function inThere(a1, a2) {
+    return newArr.push(
+      ...a2.filter(x => {
+        // the spread here was unknown until testing
+        return !a1.includes(x);
+      })
+    );
+  }
+  inThere(arr1, arr2);
+  inThere(arr2, arr1);
   return newArr;
+}
+
+// time: 15 mins
+function diffArray(arr1, arr2) {
+  return arr1
+    .concat(arr2)
+    .filter(item => !arr1.includes(item) || !arr2.includes(item));
+}
+
+// time: 5 mins, right after looking at the solution
+function diffArray(arr1, arr2) {
+  return arr1
+    .filter(x => !arr2.includes(x))
+    .concat(arr2.filter(x => !arr1.includes(x)));
+} // missed the !includes. I kep missing it actually.
+
+// time: 2 mins, right after looking at the solution
+function diffArray(arr1, arr2) {
+  function diff(a, b) {
+    return a.filter(item => b.indexOf(item) === -1);
+  }
+  return [...diff(arr1, arr2), ...diff(arr2, arr1)];
+}
+*/
+
+// time: ? mins
+function diffArray(arr1, arr2) {
+  return arr1;
 }
 
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //supposed to be [4]
