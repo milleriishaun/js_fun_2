@@ -26,6 +26,7 @@ function translatePigLatin(str) {
 }
 */
 
+/*
 // Basic Solution // I couldn't have solved for this on my life. GL @ interviews.
 function translatePigLatin(str) {
   // Create variables to be used
@@ -43,7 +44,7 @@ function translatePigLatin(str) {
     // Take the string from the first vowel to the last char
     // then add the consonants that were previously omitted and add the ending.
     pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + 'ay';
-  }
+  } //note: they used indexOf to get a number... then used it for pigLatin
   return pigLatin;
 }
 
@@ -60,7 +61,9 @@ function translatePigLatin(str) {
 // Add letters before first vowel to end of string.
 // substr() is used for string manipulation here.
 // Add ay to end of string and return it.
+*/
 
+/*
 // Intermediate Solution
 function translatePigLatin(str) {
   function check(obj) {
@@ -72,7 +75,10 @@ function translatePigLatin(str) {
   return str
     .substr(check(0))
     .concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay');
-}
+} // this is the perfect example of next-level coding for me...
+//note: they use recursion, functions, and recursion and FP.
+//note: I need to study this and be able to master it for practice doing
+//note: other problem this way.
 
 // Code Explanation:
 // This is a declarative as well as recursive approach to this problem.
@@ -85,6 +91,7 @@ function translatePigLatin(str) {
 // Then, letters up until that index are removed from the string and
 // concatenated with either that same chunk of removed string or w accordingly,
 // and then ay regardless.
+*/
 
 // Advanced Solution
 function translatePigLatin(str) {
@@ -105,7 +112,11 @@ function translatePigLatin(str) {
   }
   // convert array to string and concatenate "ay" at the end
   return strArr.join('') + 'ay';
-}
+} // this just identifies the need to know if the value is a consonant,
+// and thus makes a function just for that... and uses it in multiple places.
+// It is good but I find that it is too wordy. It does make the rules of
+// the practice more easy to follow. I could learn a few things from being
+// able to reproduce some of this.
 
 // Code Explanation:
 // isConsonant() is used to check if a character is a consonant.
