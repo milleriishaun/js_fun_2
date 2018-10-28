@@ -2,8 +2,8 @@
 // time: 10 mins. //fail: didn't really work, so I had to move it here.
 function fearNotLetter(str) {
   let arr = str.split();
-  let start = 97;
-  let end = 122;
+  // let start = 97;
+  // let end = 122;
   let startx = arr[0];
   let endx = arr[arr.length];
   let code = 0;
