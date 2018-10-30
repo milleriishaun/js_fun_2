@@ -219,6 +219,7 @@ console.log(
 );
 */
 
+/*
 // Attempt 1: Advanced solution: Declarative approach
 // fail time: 1 min
 function largestOfFour(arr) {
@@ -262,6 +263,7 @@ console.log(
     [-72, -3, -17, -10]
   ])
 );
+*/
 
 //==========================Random bind example=======================
 /*
@@ -289,3 +291,61 @@ console.log(retrieveX()); // here is the difference... since it is the this of g
 var boundGetX = retrieveX.bind(module);
 console.log(boundGetX()); // 81
 */
+
+// Practice
+
+/*
+// fail time: 10 mins.
+// debug time: 10 mins
+function largestOfFour(arr) {
+  return arr.map(Function.apply.bind(Math.max, null));
+}
+*/
+
+// fail time: after looking at intermediate Sol, 10/30/2018 1:11pm
+// debug time: 1 min // I was aiming for this at first but
+// did not have the right structure to get it right the first time.
+function largestOfFour(arr) {
+  return arr.map(item => {
+    return item.reduce((acc, val) => {
+      return val > acc ? val : acc;
+    });
+  });
+}
+
+//rock solid!
+console.log(
+  largestOfFour([
+    [4, 5, 1, 3],
+    [13, 27, 18, 26],
+    [32, 35, 37, 39],
+    [1000, 1001, 857, 1]
+  ])
+); //[5, 27, 39, 1001]
+
+console.log(
+  largestOfFour([
+    [13, 27, 18, 26],
+    [4, 5, 1, 3],
+    [32, 35, 37, 39],
+    [1000, 1001, 857, 1]
+  ])
+); //[27, 5, 39, 1001]
+
+console.log(
+  largestOfFour([
+    [4, 9, 1, 3],
+    [13, 35, 18, 26],
+    [32, 35, 97, 39],
+    [1000000, 1001, 857, 1]
+  ])
+); //[9, 35, 97, 1000000]
+
+console.log(
+  largestOfFour([
+    [17, 23, 25, 12],
+    [25, 7, 34, 48],
+    [4, -10, 18, 21],
+    [-72, -3, -17, -10]
+  ])
+); //[25, 48, 21, -3]
