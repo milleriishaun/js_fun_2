@@ -6,6 +6,7 @@ function confirmEnding(str, target) {
 */
 
 // True
+console.log('True(5):');
 console.log(confirmEnding('Bastian', 'n'));
 console.log(confirmEnding('Congratulation', 'on'));
 console.log(confirmEnding('He has to give me a new name', 'name'));
@@ -13,6 +14,7 @@ console.log(confirmEnding('Open sesame', 'same'));
 console.log(confirmEnding('Abstraction', 'action'));
 
 // False
+console.log('False(5):');
 console.log(confirmEnding('Connor', 'n'));
 console.log(
   confirmEnding(
@@ -29,9 +31,16 @@ console.log(
   )
 );
 
+/*
 // Intermediate solution: Declarative approach
 function confirmEnding(str, target) {
   return str.slice(str.length - target.length) === target;
   //note: no need for ending argument since it defaults to end of string
   //note: no need for conditional since comparison returns true/false
+}
+*/
+
+// time: 5 mins, 10/30/2018 1:20pm
+function confirmEnding(str, target) {
+  return str.slice(-target.length) === target;
 }
