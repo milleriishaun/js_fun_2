@@ -152,6 +152,8 @@ console.log(
 );
 
 */
+
+/*
 // Attempt 1(continued): Advanced Solution
 // Tweaks
 function findLongestWordLength(str) {
@@ -169,6 +171,36 @@ function findLongestWordLength(str) {
     // trip: slice creates a shadow array, and does not change original.
   }
 }
+*/
+
 console.log(
   findLongestWordLength('What if we try a word such as otorhinolaryngology')
 );
+
+// Practice
+
+/*
+// time: 15 mins
+function findLongestWordLength(str) {
+  return str.split(' ').reduce((acc, item) => {
+    return Math.max(acc, item.length);
+  }, 0);
+}
+*/
+
+/*
+// time: 15 mins, 10/30/2018 12:46pm
+function findLongestWordLength(str) {
+  str = str.split(' ');
+  if (str.length === 1) {
+    return str[0].length;
+  }
+  if (str[0].length >= str[1].length) {
+    str.splice(1, 1);
+  }
+  if (str[0].length < str[1].length) {
+    return findLongestWordLength(str.slice(1, str.length).join(' '));
+  }
+  return findLongestWordLength(str.join(' '));
+}
+*/
