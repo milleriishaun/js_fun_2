@@ -75,6 +75,7 @@ function mutation(arr) {
  }
 */
 
+/*
 // Intermediate solution: Declarative
 function mutation(arr) {
   return arr[1]
@@ -85,7 +86,9 @@ function mutation(arr) {
     });
 }
 // this is interesting because it uses .every()
+*/
 
+/*
 // Attempt 1: Intermediate solution: Declarative
 function mutation(arr) {
   return arr[1]
@@ -97,10 +100,20 @@ function mutation(arr) {
 }
 // I like this solution, but it is very involved...
 // I want to attempt this solution on 10/21/2018, 1 week.
+*/
 
+// Practice Session 2
+
+// fail time: 20 mins, 10/30/2018, 6:30pm
+function mutation(arr) {
+  return arr[0].includes(...arr[1].split('')); // I'm too tired to figure this out. Need break.
+}
+
+console.log('False(3):');
 console.log(mutation(['hello', 'hey']));
 console.log(mutation(['hello', 'neo']));
 console.log(mutation(['voodoo', 'no']));
+console.log('True(6):');
 console.log(mutation(['hello', 'Hello']));
 console.log(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu']));
 console.log(mutation(['Mary', 'Army']));

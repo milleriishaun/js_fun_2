@@ -97,12 +97,53 @@ function getIndexToIns(arr, num) {
 
 // Practice Session 2, 10/30/2018
 
-// time: mins, 10/30/2018 5:00pm
+/*
+// time: 20 mins, 10/30/2018 5:48pm
+// debug time: 10 mins
 function getIndexToIns(arr, num) {
-  return arr;
+  arr.sort((a, b) => a > b);
+  for (let i = 1; i <= arr.length; ++i) {
+    if (arr[i - 1] < num && (arr[i] >= num || arr[i] === undefined)) {
+      return i;
+    }
+  }
+  return 0;
+}
+*/
+
+/*
+// time: 3 mins ... after looking at Int Sol 2 and Adv Sol
+// debug time: 1 mins
+function getIndexToIns(arr, num) {
+  return arr
+    .concat(num)
+    .sort((a, b) => a - b) //fail: forgot params of arguments in arrow func
+    .indexOf(num);
+}
+*/
+
+/*
+// time: 1 mins
+// debug time: 0 mins
+function getIndexToIns(arr, num) {
+  arr.push(num);
+  arr.sort((a, b) => a > b);
+  return arr.indexOf(num);
+}
+*/
+
+// Practice Session 3, 11/?/2018
+
+// time: ? mins, 11/?/2018 ?pm
+// debug time: 0 mins
+function getIndexToIns(arr, num) {
+  return;
 }
 
+console.log(getIndexToIns([10, 20, 30, 40, 50], 35)); //3
 console.log(getIndexToIns([10, 20, 30, 40, 50], 30)); //2
+console.log(getIndexToIns([40, 60], 50)); //1
+console.log(getIndexToIns([3, 10, 5], 3)); //0
 console.log(getIndexToIns([5, 3, 20, 3], 5)); //2
 console.log(getIndexToIns([2, 20, 10], 19)); //2
 console.log(getIndexToIns([2, 5, 10], 15)); //3
