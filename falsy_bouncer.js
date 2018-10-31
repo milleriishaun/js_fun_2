@@ -29,3 +29,5 @@ function bouncer(arr) {
 }
 
 console.log(bouncer([7, 'ate', '', false, 9]));
+
+// this solution is too easy... 10/30/2018, I remember

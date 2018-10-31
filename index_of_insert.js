@@ -21,6 +21,7 @@ function getIndexToIns(arr, num) {
 /*
 */
 
+/*
 // Basic solution
 function getIndexToIns(arr, num) {
   arr.sort(function(a, b) {
@@ -33,6 +34,7 @@ function getIndexToIns(arr, num) {
 
   return arr.length;
 }
+*/
 
 /*
 // Basic solution 2
@@ -92,6 +94,14 @@ function getIndexToIns(arr, num) {
     .indexOf(num);
 }
 */
+
+// Practice Session 2, 10/30/2018
+
+// time: mins, 10/30/2018 5:00pm
+function getIndexToIns(arr, num) {
+  return arr;
+}
+
 console.log(getIndexToIns([10, 20, 30, 40, 50], 30)); //2
 console.log(getIndexToIns([5, 3, 20, 3], 5)); //2
 console.log(getIndexToIns([2, 20, 10], 19)); //2
