@@ -62,3 +62,23 @@ function repeatStringNumTimes(str, num) {
 
 repeatStringNumTimes('abc', 3);
 */
+
+// Practice
+// time: 20 mins
+// debug time: 5 mins. // got recursion messed up
+function repeatStringNumTimes(str, num) {
+  if (num === 1) {
+    return str;
+  }
+  if (num < 1) {
+    return '';
+  }
+  return str.concat(repeatStringNumTimes(str.slice(), num - 1));
+}
+
+console.log(repeatStringNumTimes('*', 3)); //"***"
+console.log(repeatStringNumTimes('abc', 3)); //"abcabcabc"
+console.log(repeatStringNumTimes('abc', 4)); //"abcabcabcabc"
+console.log(repeatStringNumTimes('abc', 1)); //"abc"
+console.log(repeatStringNumTimes('*', 8)); //"********"
+console.log(repeatStringNumTimes('abc', -2)); //""

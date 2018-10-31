@@ -1,6 +1,6 @@
 /*
 
-// my inital solution
+// my initial solution
 // time: 30 mins //forgot strings are immutable
 function titleCase(str) {
   let arr = str.split('');
@@ -91,6 +91,7 @@ function titleCase(str) {
 */
 
 /*
+// Practice Session 1 10/08/2018
 // Attempt 1: Intermediate Solution
 //copied much but I get the usage now.
 function titleCase(str) {
@@ -117,6 +118,7 @@ function titleCase(str) {
 console.log(titleCase("I'm a little tea pot"));
 */
 
+/*
 // Attempt 1: Advanced solution
 // time: 5 mins
 function titleCase(str) {
@@ -124,3 +126,39 @@ function titleCase(str) {
 } //trip: toLowerCase needs invokation
 //trip: regex needs to use backslashes, not forwardslashes
 console.log(titleCase("I'm a little tea pot"));
+*/
+
+// Practice Session 2 10/30/2018
+
+/*
+// time: 10 mins, 10/30/2018 4:09pm
+// debug time: 0 mins
+function titleCase(str) {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(' ');
+}
+*/
+
+/*
+// time: 5 mins, 10/30/2018 4:20pm, right after looking at Adv Sol
+// debug time: 0 mins
+function titleCase(str) {
+  return str.toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase());
+}
+*/
+
+// Practice Session 3 10/?/2018
+// time: ? mins, 10/?/2018 ?pm
+// debug time: ? mins
+function titleCase(str) {
+  return str;
+}
+
+console.log(titleCase("I'm a little tea pot")); //I'm A Little Tea Pot
+console.log(titleCase('sHoRt AnD sToUt')); //Short And Stout
+console.log(titleCase('HERE IS MY HANDLE HERE IS MY SPOUT')); //Here Is My Handle Here Is My Spout
