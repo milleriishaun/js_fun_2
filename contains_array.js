@@ -104,10 +104,35 @@ function mutation(arr) {
 
 // Practice Session 2
 
+/*
 // fail time: 20 mins, 10/30/2018, 6:30pm
 function mutation(arr) {
   return arr[0].includes(...arr[1].split('')); // I'm too tired to figure this out. Need break.
 }
+*/
+
+//Go through and compare arr[0] to arr[1], going through each value and
+// trying to see if each letter in the arr[1] is includes in the string that is in
+// the array at the arr[0] position, and if all of them match, then call it
+// a day and say that at least there is all the matches and therefore it is
+// true. Otherwise it is false. If one is false, return false and exit the loop.
+
+/*
+// Idk the solution without using the easy way out
+// I should have to used the intermediate solution: declarative
+// time(to copy from memory): 5 mins, 10/31/2018, 12:50pm
+// debug time: 2 mins
+function mutation(arr) {
+  return arr[1]
+    .toLowerCase()
+    .split('')
+    .every(item => {
+      return arr[0].toLowerCase().indexOf(item) !== -1;
+    });
+}
+*/
+
+// i was too bored and tired to try the procedural way
 
 console.log('False(3):');
 console.log(mutation(['hello', 'hey']));

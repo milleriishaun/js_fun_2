@@ -77,6 +77,7 @@ function chunkArrayInGroups(arr, size) {
 }
 */
 
+/*
 // Advanced solution 3
 function chunkArrayInGroups(arr, size) {
   if (arr.length <= size) {
@@ -93,11 +94,27 @@ function chunkArrayInGroups(arr, size) {
     // I do wonder what the specific rule is though.
   }
 } // I like this recursion
+*/
 
-console.log(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2));
-console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
-console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2));
-console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));
-console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3));
-console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4));
-console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2));
+// Practice Session 2
+
+// fail time: 20 mins
+// debug time: ? mins
+// my brain isn't functioning... I should go home. Met Brett at Pole Line church
+function chunkArrayInGroups(arr, size) {
+  if (arr.length / size > 1) {
+    return arr.concat(chunkArrayInGroups([arr.slice(0, size)], size));
+  } else {
+    return arr.concat([arr.slice(0, size)]);
+  }
+  // each loop, splice size amount if the arr.length % size === 0, else
+  // push the rest of it and call it an new array.
+} // Idk, this hurts my brain
+
+console.log(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2)); //[["a", "b"], ["c", "d"]]
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)); //[[0, 1, 2], [3, 4, 5]]
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)); //[[0, 1], [2, 3], [4, 5]]
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)); //[[0, 1, 2, 3], [4, 5]]
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)); //[[0, 1, 2], [3, 4, 5], [6]]
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)); //[[0, 1, 2, 3], [4, 5, 6, 7], [8]]
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)); //[[0, 1], [2, 3], [4, 5], [6, 7], [8]]
