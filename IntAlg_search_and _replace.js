@@ -35,7 +35,7 @@ function myReplace(str, before, after) {
   if (str[index] === str[index].toUpperCase()) {
     // Change the after word to be capitalized before we use it.
     after = after.charAt(0).toUpperCase() + after.slice(1);
-    // fail: I lost sight of this after.charAT(0).toUpperCase() soln
+    // fail: I lost sight of this after.charAt(0).toUpperCase() soln
   }
   // Now replace the original str with the edited one.
   str = str.replace(before, after);
@@ -94,10 +94,13 @@ function myReplace(str, before, after) {
 }
 */
 
+/*
 // Advanced Solution 2
-// This solution works but I'm more or less not really goign to be using someing
-// like this because I don't need to create a whole utility function + getters/setters
-// Add new method to the String object, not overriding it if one exists already
+// This solution works but I'm more or less not really going to be
+// using something like this because I don't need to create a whole
+// utility function + getters/setters.
+// Add new method to the String object, not overriding it if one
+// exists already.
 String.prototype.capitalize =
   String.prototype.capitalize ||
   function() {
@@ -106,8 +109,8 @@ String.prototype.capitalize =
 const Util = (function() {
   // Create utility module to hold helper functions
   function textCase(str, tCase) {
-    // Depending if the tCase argument is passed we either set the case of the
-    // given string or we get it.
+    // Depending if the tCase argument is passed we either set
+    // the case of the given string or we get it.
     // Those functions can be expanded for other text cases.
     if (tCase) {
       return setCase(str, tCase);
@@ -148,6 +151,48 @@ function myReplace(str, before, after) {
   const regex = new RegExp(before, 'gi');
   const replacingStr = textCase(after, textCase(before));
   return str.replace(regex, replacingStr);
+}
+*/
+
+// Practice Session 2
+
+/*
+// time: 20 mins // I need practice with this, but I am learning for sure
+// debug time: 40 mins
+function myReplace(str, before, after) {
+  return str.replace(
+    before,
+    before.charCodeAt(0) <= 90
+      ? after.replace(/(^[a-z])/, x => x.toUpperCase())
+      : after
+  );
+} // to me, this is actually a good solution
+*/
+
+/*
+// time: 20 mins // this is an interesting way to solve
+// debug time: 5 mins
+function myReplace(str, before, after) {
+  // textbook method-lookup of String: if already defined, use it,
+  // or if not defined, then creating it on String.prototype and use it.
+  String.prototype.capitalize =
+    String.prototype.capitalize ||
+    function() {
+      return this[0].toUpperCase() + this.slice(1);
+    };
+  return str.replace(
+    before,
+    before.charCodeAt(0) <= 90 ? after.capitalize() : after
+  );
+}
+*/
+
+// Practice Session 3
+
+// time:  mins
+// debug time:  mins
+function myReplace(str, before, after) {
+  return;
 }
 
 console.log(myReplace('Let us go to the store', 'store', 'mall')); // "Let us go to the mall"
