@@ -98,18 +98,42 @@ function chunkArrayInGroups(arr, size) {
 
 // Practice Session 2
 
-// fail time: 20 mins
-// debug time: ? mins
+/*
+// fail time: 30 mins
+// debug time: 60 mins
 // my brain isn't functioning... I should go home. Met Brett at Pole Line church
 function chunkArrayInGroups(arr, size) {
-  if (arr.length / size > 1) {
-    return arr.concat(chunkArrayInGroups([arr.slice(0, size)], size));
+  if (arr.length <= size) {
+    return [arr];
   } else {
-    return arr.concat([arr.slice(0, size)]);
+    return [arr.slice(0, size)].concat(
+      chunkArrayInGroups(arr.slice(size), size)
+    );
   }
-  // each loop, splice size amount if the arr.length % size === 0, else
-  // push the rest of it and call it an new array.
-} // Idk, this hurts my brain
+}
+*/
+
+/*
+// try again
+// time 5 mins, 10/31/2018 3:08pm
+function chunkArrayInGroups(arr, size) {
+  if (arr.length <= size) {
+    return [arr];
+  } else {
+    return [arr.slice(0, size)].concat(
+      chunkArrayInGroups(arr.slice(size), size)
+    );
+  }
+}
+*/
+
+// Practice Session 3
+
+// time: ? mins
+// debug time: ? mins
+function chunkArrayInGroups(arr, size) {
+  return;
+}
 
 console.log(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2)); //[["a", "b"], ["c", "d"]]
 console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)); //[[0, 1, 2], [3, 4, 5]]

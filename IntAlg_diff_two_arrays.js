@@ -14,8 +14,6 @@ function uniq(a) {
     return seen.hasOwnProperty(item) ? false : (seen[item] = true);
   });
 } //fail:I'm not answering the problem correctly
-
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 */
 
 /*
@@ -28,8 +26,6 @@ function diffArray(arr1, arr2) {
 function uniq(a) {
   return Array.from(new Set(a));
 }
-
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 */
 
 /*
@@ -41,28 +37,6 @@ function diffArray(arr1, arr2) {
   let uniq = a => [...new Set(a)]; // this is a partial function
   return uniq(newArr);
 } //fail:I'm not answering the problem correctly
-
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //supposed to be [4]
-console.log(
-  diffArray(
-    ['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
-    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be ["pink wool"]
-
-console.log(
-  diffArray(
-    ['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
-    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be ["diorite", "pink wool"]
-
-console.log(
-  diffArray(
-    ['andesite', 'grass', 'dirt', 'dead shrub'],
-    ['andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be []
 */
 
 /*
@@ -118,28 +92,6 @@ function diffArray(arr1, arr2) {
   // return uniq(newArr); // I guess this removing duplicates is unnecessary
   return newArr;
 }
-
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //supposed to be [4]
-console.log(
-  diffArray(
-    ['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
-    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be ["pink wool"]
-
-console.log(
-  diffArray(
-    ['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
-    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be ["diorite", "pink wool"]
-
-console.log(
-  diffArray(
-    ['andesite', 'grass', 'dirt', 'dead shrub'],
-    ['andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be []
 */
 
 /*
@@ -157,67 +109,12 @@ function diffArray(arr1, arr2) {
   }
   return newArr;
 }
-
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //supposed to be [4]
-console.log(
-  diffArray(
-    ['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
-    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be ["pink wool"]
-
-console.log(
-  diffArray(
-    ['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
-    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be ["diorite", "pink wool"]
-
-console.log(
-  diffArray(
-    ['andesite', 'grass', 'dirt', 'dead shrub'],
-    ['andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be []
-*/
-
-/*
-// my solution 5(after looking at 3 hints, and reviewing)
-// time: 15 mins.
-function diffArray(arr1, arr2) {
-  return arr1
-    .concat(arr2)
-    .filter(item => !(arr1.includes(item) && arr2.includes(item)));
-}
-
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //supposed to be [4]
-console.log(
-  diffArray(
-    ['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
-    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be ["pink wool"]
-
-console.log(
-  diffArray(
-    ['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
-    ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be ["diorite", "pink wool"]
-
-console.log(
-  diffArray(
-    ['andesite', 'grass', 'dirt', 'dead shrub'],
-    ['andesite', 'grass', 'dirt', 'dead shrub']
-  )
-); //supposed to be []
 */
 
 /*
 // Basic Solution: Imperative Approach
 function diffArray(arr1, arr2) {
   var newArr = [];
-
   function onlyInFirst(first, second) {
     // Looping through an array to find elements that don't exist in another array
     for (var i = 0; i < first.length; i++) {
@@ -227,14 +124,10 @@ function diffArray(arr1, arr2) {
       }
     }
   }
-
   onlyInFirst(arr1, arr2);
   onlyInFirst(arr2, arr1);
-
   return newArr;
 }
-
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 */
 
 /*
@@ -245,8 +138,6 @@ function diffArray(arr1, arr2) {
     .filter(item => !arr1.includes(item) || !arr2.includes(item));
 } //note: they use the ! operator and the || b/c they know it's in one and
 //note: and not in the other.
-
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 */
 
 /*
@@ -256,7 +147,6 @@ function diffArray(arr1, arr2) {
     .filter(el => !arr2.includes(el))
     .concat(arr2.filter(el => !arr1.includes(el)));
 }
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 */
 
 /*
@@ -268,7 +158,6 @@ function diffArray(arr1, arr2) {
     return a.filter(item => b.indexOf(item) === -1);
   }
 }
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 //I like this solution because it separates the function into bitesize
 */
 
@@ -312,13 +201,159 @@ function diffArray(arr1, arr2) {
   return [...diff(arr1, arr2), ...diff(arr2, arr1)];
 }
 */
+// _______________________________________________________________________
+// _______________________________________________________________________
+// _______________________________________________________________________
 
-// time: ? mins
+// Practice Session 2(acceptable solutions)
+
+// more accessible solutions:
+
+/*
+// my solution 4(after looking at 3 hints)
+// time: 30 mins
 function diffArray(arr1, arr2) {
-  return arr1;
+  let comboArr = arr1.concat(arr2);
+  let newArr = [];
+  for (let i = 0; i < comboArr.length; i++) {
+    if (!arr1.includes(comboArr[i])) {
+      newArr.push(comboArr[i]);
+    } else if (!arr2.includes(comboArr[i])) {
+      newArr.push(comboArr[i]);
+    }
+  }
+  return newArr;
+}
+*/
+
+/*
+// my solution 5(after looking at 3 hints, and reviewing)
+// time: 15 mins.
+function diffArray(arr1, arr2) {
+  return arr1
+    .concat(arr2)
+    .filter(item => !(arr1.includes(item) && arr2.includes(item)));
+}
+*/
+
+/*
+// Basic Solution: Imperative Approach
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  function onlyInFirst(first, second) {
+    // Looping through an array to find elements that don't exist in another array
+    for (var i = 0; i < first.length; i++) {
+      if (second.indexOf(first[i]) === -1) {
+        // Pushing the elements unique to first to newArr
+        newArr.push(first[i]);
+      }
+    }
+  }
+  onlyInFirst(arr1, arr2);
+  onlyInFirst(arr2, arr1);
+  return newArr;
+}
+*/
+
+/*
+// Intermediate Solution: Declarative Solution
+function diffArray(arr1, arr2) {
+  return arr1
+    .concat(arr2)
+    .filter(item => !arr1.includes(item) || !arr2.includes(item));
+} //note: they use the ! operator and the || b/c they know it's in one
+//note: and not in the other.
+*/
+
+/*
+// Advanced Solution1: Declarative Approach
+function diffArray(arr1, arr2) {
+  return arr1
+    .filter(el => !arr2.includes(el))
+    .concat(arr2.filter(el => !arr1.includes(el)));
+}
+*/
+
+/*
+// Advanced Solution2: Declarative Approach
+function diffArray(arr1, arr2) {
+  return [...diff(arr1, arr2), ...diff(arr2, arr1)];
+
+  function diff(a, b) {
+    return a.filter(item => b.indexOf(item) === -1);
+  }
+}
+//I like this solution because it separates the function into bitesize
+*/
+
+// ------------------------------------------------------------
+// ------------------------------------------------------------
+// ------------------------------------------------------------
+
+// Practice Session 2(practice)
+
+/*
+// fail time: 20 mins
+// debug time: mins
+function diffArray(arr1, arr2) {
+  function isNotIn(a1, a2) {
+    let excluded = [];
+    console.log(a1);
+    for (let i = 0; i < a2.length; i++) {
+      if (v1.indexOf(a2) === -1) {
+        excluded.push(a2[i]);
+      }
+    }
+    return excluded;
+  }
+  return arr1.concat(arr2).filter(item => {
+    return isNotIn(item, arr2).concat(isNotIn(item, arr1));
+  });
+}
+*/
+
+/*
+// time: 2 mins .. after looking deeply at the solutions...couldn't think
+// need much practice
+// debug time: 0 mins
+function diffArray(arr1, arr2) {
+  return arr1.concat(arr2).filter(item => {
+    return !arr1.includes(item) || !arr2.includes(item);
+  });
+}
+*/
+
+/*
+// time: 1 mins .. 10/31/2018, 7:15pm
+// need much practice
+// debug time: 1 mins
+function diffArray(arr1, arr2) {
+  return arr1
+    .filter(el => !arr2.includes(el))
+    .concat(arr2.filter(el => !arr1.includes(el)));
+}
+*/
+
+// time: 5 mins .. 10/31/2018, 7:29pm
+// need much practice
+// debug time: 20 mins
+function diffArray(arr1, arr2) {
+  let newArr = [];
+  function isIn(a1, a2) {
+    for (let i = 0; i < a1.length; i++) {
+      // if (!a1.includes(a2[i])) { //trip: b/c this gives some undefined
+      if (a2.indexOf(a1[i]) === -1) {
+        newArr.push(a1[i]);
+      }
+    }
+    return newArr;
+  }
+  isIn(arr2, arr1);
+  isIn(arr1, arr2);
+  return newArr;
 }
 
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //supposed to be [4]
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //[4]
 console.log(
   diffArray(
     ['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],

@@ -165,6 +165,7 @@ function sumAll(arr) {
 }
 */
 
+/*
 // time: 1 mins
 function sumAll(arr) {
   let sum = 0;
@@ -172,6 +173,43 @@ function sumAll(arr) {
     sum += i;
   }
   return sum;
+}
+*/
+
+// Practice Session 2
+
+/*
+// time: 5 mins // I really failed to remember this algorithm technique
+// debug time: 1 mins
+function sumAll(arr) {
+  let x = Math.max(arr[0], arr[1]);
+  let y = Math.min(arr[0], arr[1]);
+  let sum = 0;
+  for (let i = y; i <= x; i++) {
+    sum += i;
+  }
+  return sum;
+}
+*/
+
+// 2nd solution, solve this but it's not much better...10/31/2018 3:38pm
+// time: 1 mins // I really failed to remember this algorithm technique
+// debug time: 0 mins // basically just copied and took out arr[0] and arr[1]
+function sumAll(arr) {
+  let sum = 0;
+  for (let i = Math.min(...arr); i <= Math.max(...arr); i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+// Practice Session 3
+
+// time: mins
+// debug time: mins
+
+function sumAll(arr) {
+  return;
 }
 
 console.log(sumAll([1, 4])); //10

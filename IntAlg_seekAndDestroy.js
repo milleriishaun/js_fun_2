@@ -15,34 +15,6 @@ function destroyer(arr) {
   }
   return arr;
 }
-
-console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1, 1]
-console.log(destroyer([2, 3, 2, 3], 2, 3)); // []
-console.log(
-  destroyer(
-    [
-      'possum',
-      'trollo',
-      12,
-      'safari',
-      'hotdog',
-      92,
-      65,
-      'grandma',
-      'bugati',
-      'trojan',
-      'yacht'
-    ],
-    'yacht',
-    'possum',
-    'trollo',
-    'safari',
-    'hotdog',
-    'grandma',
-    'bugati',
-    'trojan'
-  )
-); // [12,92,65]
 */
 
 /*
@@ -58,34 +30,6 @@ function destroyer(arr) {
   // idea: reduce the array of arguments until one array answer stands
   }; //fail: realized this was a bit more complicated than I could handle
 }
-
-console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1, 1]
-console.log(destroyer([2, 3, 2, 3], 2, 3)); // []
-console.log(
-  destroyer(
-    [
-      'possum',
-      'trollo',
-      12,
-      'safari',
-      'hotdog',
-      92,
-      65,
-      'grandma',
-      'bugati',
-      'trojan',
-      'yacht'
-    ],
-    'yacht',
-    'possum',
-    'trollo',
-    'safari',
-    'hotdog',
-    'grandma',
-    'bugati',
-    'trojan'
-  )
-); // [12,92,65]
 */
 
 /*
@@ -130,11 +74,9 @@ console.log(Array.from([1, 2, 3], x => x + x));
 const destroyer = (arr, ...args) => arr.filter(i => !args.includes(i));
 //note: this is a seemingly perfect solution(1 line, ES6, easily read)
 //I really like this solution. I need to practice it and get good at it.
-// You really ahve to understand code to get this solution
+// You really have to understand code to get this solution
 //note: the spreaded args gets passed into the filter function
 //note as the args array).
-console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1, 1]
-console.log(destroyer([2, 3, 2, 3], 2, 3)); // []
 */
 
 /*
@@ -200,9 +142,46 @@ function destroyer(arr) {
 // // expected output: Array [2, 4, 6]
 */
 
+/*
 // time: 5 mins, while glancing 2 times at the Advanced Solution
 // need individual practice.... how about 10am on 10/31/2018
 const destroyer = (arr, ...args) => arr.filter(item => !args.includes(item));
+*/
+
+// Practice Session 2
+
+/*
+// time: 5 mins . 10/31/2018, 8:11pm
+// debug time: 10 mins
+function destroyer(arr) {
+  return arr.filter(item => {
+    return ![...arguments].includes(item);
+  });
+} // I know i have never used this exact solution before
+// I actually surprized myself with this one
+*/
+
+/*
+// time: 1 mins , 8:13pm
+// debug time: 1 mins
+function destroyer(arr) {
+  return arr.filter(item => ![...arguments].includes(item));
+}
+*/
+
+/*
+// time: 2 mins // right after looking at solution
+// debug time: 1 mins
+const destroyer = (arg, ...rest) => arg.filter(item => !rest.includes(item));
+*/
+
+// Practice Session 3
+
+// time:  mins
+// debug time:  mins
+function destroyer(arr) {
+  return;
+}
 
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1, 1]
 console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)); // [1, 5, 1]
