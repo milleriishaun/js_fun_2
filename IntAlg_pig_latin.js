@@ -79,6 +79,8 @@ function translatePigLatin(str) {
 //note: they use recursion, functions, and recursion and FP.
 //note: I need to study this and be able to master it for practice doing
 //note: other problem this way.
+//IDK how this applies pigLatin well, but it is very good. Can't get
+// better if I don't fully understand the rules. Even w/ next-level code.
 
 // Code Explanation:
 // This is a declarative as well as recursive approach to this problem.
@@ -132,10 +134,81 @@ function translatePigLatin(str) {
 
 // Practice Session 2
 
-// time: mins
-// debug time: mins
+/*
+// time: 40 mins // pretty pathetic solution and doesn't pass all FCC tests
+// Reason being that I don't fully understand piglatin or what tests are run
+// debug time: 20 mins
 function translatePigLatin(str) {
-  return str;
+  let regex = /[aeiou]/;
+  if (str.slice(0, 2).match(regex) === null) {
+    let consonant = str.slice(0, 2);
+    return str
+      .split('')
+      .slice(2)
+      .concat(String(consonant) + 'ay')
+      .join('');
+  } else if (str.slice(0, 1).match(regex) === null) {
+    let consonant = str.slice(0, 1);
+    return str
+      .split('')
+      .slice(1)
+      .concat(String(consonant) + 'ay')
+      .join('');
+  } else if (str.slice(0, 1).match(regex) !== null) {
+    return str
+      .split('')
+      .concat('way')
+      .join('');
+  }
+}
+*/
+
+/*
+// time: 2 mins
+// debug time: 0 mins
+// it is better to do this:
+function translatePigLatin(str) {
+  let regex = /[aeiou]/;
+  if (str.slice(0, 1).match(regex) !== null) {
+    return str
+      .split('')
+      .concat('way')
+      .join('');
+  } else if (str.slice(0, 1).match(regex) === null) {
+    let vowelIndex = str.indexOf(str.match(regex)[0]);
+    //note:important to find the index of the first match using the regex
+    return str
+      .split('')
+      .slice(vowelIndex)
+      .concat(str.slice(0, vowelIndex) + 'ay')
+      .join('');
+  } // not sure how the case of the no vowel will pass FCC tests
+}
+*/
+
+/*
+// time: 20 mins // this is an interesting example, different way of thinking
+// debug time: 40 mins
+function translatePigLatin(str) {
+  let strArr = str.slice().split('');
+  let regex = /[aeiou]/;
+  if (str.slice(0, 1).match(regex) !== null) {
+    return str.concat('way');
+  } else if (str.slice(0, 1).match(regex) === null) {
+    while (strArr[0].match(regex) === null) {
+      let val = strArr.shift();
+      strArr.push(val);
+    }
+    return strArr.concat('ay').join('');
+  }
+}
+*/
+
+// Practice Session 3
+// time:  mins //note:doesn't pass all FCC tests
+// debug time:  mins
+function translatePigLatin(str) {
+  return;
 }
 
 console.log(translatePigLatin('california')); // "aliforniacay"
