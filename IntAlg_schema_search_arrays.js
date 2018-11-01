@@ -27,26 +27,6 @@ function whatIsInAName(collection, source) {
   // Only change code above this line
   return arr;
 }
-
-console.log(
-  whatIsInAName(
-    [
-      { first: 'Romeo', last: 'Montague' },
-      { first: 'Mercutio', last: null },
-      { first: 'Tybalt', last: 'Capulet' }
-    ],
-    { last: 'Capulet' }
-  )
-);
-// [{ first: "Tybalt", last: "Capulet" }]
-
-console.log(
-  whatIsInAName(
-    [{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
-    { apple: 1, bat: 2 }
-  )
-);
-// [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]
 */
 
 /*
@@ -92,26 +72,6 @@ function whatIsInAName(collection, source) {
 
 // I need to practice before looking at the solution to this
 // Putting a pause on the algorithms until I master filter at least
-
-console.log(
-  whatIsInAName(
-    [
-      { first: 'Romeo', last: 'Montague' },
-      { first: 'Mercutio', last: null },
-      { first: 'Tybalt', last: 'Capulet' }
-    ],
-    { last: 'Capulet' }
-  )
-);
-// [{ first: "Tybalt", last: "Capulet" }]
-
-console.log(
-  whatIsInAName(
-    [{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
-    { apple: 1, bat: 2 }
-  )
-);
-//  [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]
 */
 
 /*
@@ -133,65 +93,6 @@ function whatIsInAName(collection, source) {
   // Only change code above this line
   return arr;
 }
-
-// loop through the source keys..then once documented
-// loop through the collection array.. then index the passing objects
-
-// just filter out the object that don't match the props and values exactly
-
-// I need to practice before looking at the solution to this
-// Putting a pause on the algorithms until I master filter at least
-
-console.log(
-  whatIsInAName(
-    [
-      { first: 'Romeo', last: 'Montague' },
-      { first: 'Mercutio', last: null },
-      { first: 'Tybalt', last: 'Capulet' }
-    ],
-    { last: 'Capulet' }
-  )
-);
-// [{ first: "Tybalt", last: "Capulet" }] 1
-
-console.log(
-  whatIsInAName([{ apple: 1 }, { apple: 1 }, { apple: 1, bat: 2 }], {
-    apple: 1
-  })
-);
-//  [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }] 2
-
-console.log(
-  whatIsInAName(
-    [{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
-    { apple: 1, bat: 2 }
-  )
-);
-//  [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }] 3
-
-console.log(
-  whatIsInAName(
-    [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
-    { apple: 1, cookie: 2 }
-  )
-);
-//  [{ "apple": 1, "bat": 2, "cookie": 2 }] 4
-
-console.log(
-  whatIsInAName(
-    [
-      { apple: 1, bat: 2 },
-      { apple: 1 },
-      { apple: 1, bat: 2, cookie: 2 },
-      { bat: 2 }
-    ],
-    { apple: 1, bat: 2 }
-  )
-);
-//  [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }] 5
-
-console.log(whatIsInAName([{ a: 1, b: 2, c: 3 }], { a: 1, b: 9999, c: 3 }));
-//  [] 6
 */
 
 /*
@@ -219,67 +120,8 @@ function whatIsInAName(collection, source) {
   return arr;
 }
 
-// loop through the source keys..then once documented
-// loop through the collection array.. then index the passing objects
-
-// just filter out the object that don't match the props and values exactly
-
-// I need to practice before looking at the solution to this
-// Putting a pause on the algorithms until I master filter at least
-
-console.log(
-  whatIsInAName(
-    [
-      { first: 'Romeo', last: 'Montague' },
-      { first: 'Mercutio', last: null },
-      { first: 'Tybalt', last: 'Capulet' }
-    ],
-    { last: 'Capulet' }
-  )
-);
-// [{ first: "Tybalt", last: "Capulet" }] 1
-
-console.log(
-  whatIsInAName([{ apple: 1 }, { apple: 1 }, { apple: 1, bat: 2 }], {
-    apple: 1
-  })
-);
-//  [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }] 2
-
-console.log(
-  whatIsInAName(
-    [{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
-    { apple: 1, bat: 2 }
-  )
-);
-//  [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }] 3
-
-console.log(
-  whatIsInAName(
-    [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
-    { apple: 1, cookie: 2 }
-  )
-);
-//  [{ "apple": 1, "bat": 2, "cookie": 2 }] 4
-
-console.log(
-  whatIsInAName(
-    [
-      { apple: 1, bat: 2 },
-      { apple: 1 },
-      { apple: 1, bat: 2, cookie: 2 },
-      { bat: 2 }
-    ],
-    { apple: 1, bat: 2 }
-  )
-);
-//  [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }] 5
-
-console.log(whatIsInAName([{ a: 1, b: 2, c: 3 }], { a: 1, b: 9999, c: 3 }));
-//  [] 6
-*/
-
-// I gave up on solving this myself because I'm missing important tools/practice
+// I gave up on solving this myself because I'm missing
+// important tools/practice
 
 /*
 // Basic Solution
@@ -302,59 +144,6 @@ function whatIsInAName(collection, source) {
 //note: I do understand now that filter simply asks if true or false for each
 //note: item at hand.
 
-
-console.log(
-  whatIsInAName(
-    [
-      { first: 'Romeo', last: 'Montague' },
-      { first: 'Mercutio', last: null },
-      { first: 'Tybalt', last: 'Capulet' }
-    ],
-    { last: 'Capulet' }
-  )
-);
-// [{ first: "Tybalt", last: "Capulet" }] 1
-
-console.log(
-  whatIsInAName([{ apple: 1 }, { apple: 1 }, { apple: 1, bat: 2 }], {
-    apple: 1
-  })
-);
-//  [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }] 2
-
-console.log(
-  whatIsInAName(
-    [{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
-    { apple: 1, bat: 2 }
-  )
-);
-//  [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }] 3
-
-console.log(
-  whatIsInAName(
-    [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
-    { apple: 1, cookie: 2 }
-  )
-);
-//  [{ "apple": 1, "bat": 2, "cookie": 2 }] 4
-
-console.log(
-  whatIsInAName(
-    [
-      { apple: 1, bat: 2 },
-      { apple: 1 },
-      { apple: 1, bat: 2, cookie: 2 },
-      { bat: 2 }
-    ],
-    { apple: 1, bat: 2 }
-  )
-);
-//  [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }] 5
-
-console.log(whatIsInAName([{ a: 1, b: 2, c: 3 }], { a: 1, b: 9999, c: 3 }));
-//  [] 6
-*/
-
 // Code Explanation:
 // We filter through the array using .filter().
 // Using a for loop we loop through each item in the object.
@@ -363,6 +152,7 @@ console.log(whatIsInAName([{ a: 1, b: 2, c: 3 }], { a: 1, b: 9999, c: 3 }));
 // in source.
 // We return false if the above if statement is correct. Otherwise,
 // we return true;
+*/
 
 /*
 // Intermediate Solution
@@ -452,6 +242,8 @@ function whatIsInAName(collection, source) {
   });
 }
 */
+
+/*
 // time: 15 mins
 function whatIsInAName(collection, source) {
   let srcKeys = Object.keys(source);
@@ -468,6 +260,30 @@ function whatIsInAName(collection, source) {
     }
     return true;
   });
+}
+*/
+
+// Practice Session 2
+
+/*
+// time: 10 mins .. gave up after 5 mins
+// debug time: 20 mins // terrible, especially for work
+function whatIsInAName(collection, source) {
+  let srcKeys = Object.keys(source);
+  return collection.filter(obj =>
+    srcKeys.every(key => obj.hasOwnProperty(key) && obj[key] === source[key])
+  );
+}
+
+// no more energy to keep practicing this discouraging code today.
+*/
+
+// Practice Session 3
+
+// time:  mins
+// debug time:  mins
+function whatIsInAName(collection, source) {
+  return;
 }
 
 console.log(
