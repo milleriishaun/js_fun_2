@@ -110,6 +110,7 @@ function spinalCase(str) {
 }
 */
 
+/*
 // Advanced Solution
 function spinalCase(str) {
   // I forget what ?= means... but I have a good guess.
@@ -128,6 +129,28 @@ function spinalCase(str) {
 // or is followed by an uppercase letter [(?=[A-Z])]
 // Join the array using a hyphen (-)
 // Lowercase the whole resulting string
+*/
+
+// Practice Session 2 10/31/2018
+
+/*
+// time: 15 mins ,10/31/2018, 8:57pm ... good solution with only Sol glimpses
+// debug time: 15 mins
+function spinalCase(str) {
+  return str
+    .replace(/([a-z])([A-Z])/g, '$1 $2') //glad I remembered regex groups
+    .replace(/[_\s]/g, '-')
+    .toLowerCase();
+}
+*/
+
+// Practice Session 3
+
+// time:  mins ,11//2018, pm
+// debug time:  mins
+function spinalCase(str) {
+  return;
+}
 
 console.log(spinalCase('This Is Spinal Tap')); // "this-is-spinal-tap"
 console.log(spinalCase('thisIsSpinalTap')); // "this-is-spinal-tap"

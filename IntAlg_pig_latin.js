@@ -93,6 +93,7 @@ function translatePigLatin(str) {
 // and then ay regardless.
 */
 
+/*
 // Advanced Solution
 function translatePigLatin(str) {
   var strArr = [];
@@ -127,6 +128,15 @@ function translatePigLatin(str) {
 // Push all consonants to end of array with help of shift() and push().
 // Convert array to string using join() and add ay to end of
 // string. Return it.
+*/
+
+// Practice Session 2
+
+// time: mins
+// debug time: mins
+function translatePigLatin(str) {
+  return str;
+}
 
 console.log(translatePigLatin('california')); // "aliforniacay"
 console.log(translatePigLatin('paragraphs')); // "aragraphspay"
