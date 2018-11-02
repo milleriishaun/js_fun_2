@@ -27,13 +27,9 @@ function pairElement(str) {
 }
 */
 
-console.log(pairElement('ATCGA')); // [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
-// console.log(pairElement('TTGAG')); // [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]
-// console.log(pairElement('CTCTA')); // [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
-
 /*
 // my initial solution 2
-// time: 40 mins // way too long, but I tired something new
+// time: 40 mins // way too long, but I tried something new
 // I'm a actually just glad it worked
 function pairElement(str) {
   let arr = str.split('');
@@ -98,6 +94,7 @@ function pairElement(str) {
 // It was eye-opening to just push correct value arrays into the final array.
 */
 
+/*
 // Intermediate Solution
 function pairElement(str) {
   //create object for pair lookup
@@ -114,3 +111,73 @@ function pairElement(str) {
 } // I like this solution because it looks very tight and clean
 // The key is to make the key,value pairs object... then returning the map
 // of the correct pairs... each in their own 2 index position arrays.
+*/
+
+// Practice Session 2, 11/01/2018
+
+/*
+// time: 30 mins, 11/01/2018, 5:48pm
+// debug time: 30 mins // this took way too long, and is a bit verbose
+function pairElement(str) {
+  let newArr = [];
+  str.split('').forEach(function(item) {
+    if (item === 'G') {
+      newArr.push(item.replace('G', 'GC'));
+    }
+    if (item === 'C') {
+      newArr.push(item.replace('C', 'CG'));
+    }
+    if (item === 'A') {
+      newArr.push(item.replace('A', 'AT'));
+    }
+    if (item === 'T') {
+      newArr.push(item.replace('T', 'TA'));
+    }
+  });
+  return newArr.map(item2 => item2.split(''));
+}
+*/
+
+/*
+// time: 40 mins, 11/01/2018, 6:19pm
+// debug time: 20 mins // too late, too late... get faster!
+function pairElement(str) {
+  let obj = {
+    A: 'AT',
+    T: 'TA',
+    G: 'GC',
+    C: 'CG'
+  };
+  let newArr = [];
+  str
+    .split('')
+    .forEach(index => newArr.push(index.replace(index, obj[index]).split('')));
+  return newArr;
+}
+*/
+
+/*
+// time: 40 mins, 11/01/2018, 6:19pm //note: this one is nicely terse
+// debug time: 20 mins // too late, too late... get faster!
+function pairElement(str) {
+  let obj = {
+    A: 'AT',
+    T: 'TA',
+    G: 'GC',
+    C: 'CG'
+  };
+  return str.split('').map(index => [index, obj[index]]);
+}
+*/
+
+// Practice Session 3
+
+// time:  mins
+// debug time:  mins
+function pairElement(str) {
+  return;
+}
+
+console.log(pairElement('ATCGA')); // [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
+// console.log(pairElement('TTGAG')); // [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]
+// console.log(pairElement('CTCTA')); // [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]

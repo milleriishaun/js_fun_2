@@ -154,7 +154,7 @@ function myReplace(str, before, after) {
 }
 */
 
-// Practice Session 2
+// Practice Session 2 11/01/2018
 
 /*
 // time: 20 mins // I need practice with this, but I am learning for sure
@@ -170,7 +170,7 @@ function myReplace(str, before, after) {
 */
 
 /*
-// time: 20 mins // this is an interesting way to solve
+// time: 20 mins // this is an interesting way to solve, 11/01/2018, 4:41pm
 // debug time: 5 mins
 function myReplace(str, before, after) {
   // textbook method-lookup of String: if already defined, use it,

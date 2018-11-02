@@ -56,6 +56,7 @@ function fearNotLetter(str) {
   return undefined;
 } // this code is clean, except the code -1 at the end
 
+/*
 // Intermediate Solution
 // Adding this solution for the sake of avoiding using 'for' and 'while' loops.
 // See the explanation for reference as to why. It's worth the effort.
@@ -83,7 +84,9 @@ function fearNotLetter(str) {
 // If not, the missing letter will be assigned to the missing variable, which
 // will be returned after the map is finished.
 // If there are no missing characters, return undefined.
+*/
 
+/*
 // Simplified Advanced Solution 1
 function fearNotLetter(str) {
   for (let i = 1; i < str.length; ++i) {
@@ -95,7 +98,9 @@ function fearNotLetter(str) {
 //note: is greater than 1. If so, then that's the charCode missing.
 //note: smart to go i = 1... then use ++i, when comparing i to i-1, b/c
 //note: there would be no issue with the max and min i indices.
+*/
 
+/*
 // Advanced Solution 2
 function fearNotLetter(str) {
   var allChars = '';
@@ -116,6 +121,16 @@ function fearNotLetter(str) {
 // match() is used to strip off the str letters from the newly created
 // string and it is returned.
 // If there are no missing characters, return undefined.
+*/
+
+// Practice Session 2, 11/01/2018
+
+// time:  mins, 11/01/2018, 6:00pm
+// debug time:  mins
+
+function fearNotLetter(str) {
+  return str;
+}
 
 console.log(fearNotLetter('abce')); // d
 console.log(fearNotLetter('abcdefghjklmno')); // i
