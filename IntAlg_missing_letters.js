@@ -143,6 +143,8 @@ function fearNotLetter(str) {
 // but failed ultimately.
 */
 
+// Practice Session 3
+
 // time:  mins
 // debug time:  mins
 function fearNotLetter(str) {
