@@ -20,6 +20,7 @@ function fearNotLetter(str) {
 }
 */
 
+/*
 // my initial solution 2... after looking at the 3 hints(need ASCII)
 // time: 15 mins
 function fearNotLetter(str) {
@@ -38,7 +39,9 @@ function fearNotLetter(str) {
   }
   return undefined;
 }
+*/
 
+/*
 // Basic Solution
 function fearNotLetter(str) {
   for (var i = 0; i < str.length; i++) {
@@ -55,6 +58,7 @@ function fearNotLetter(str) {
   }
   return undefined;
 } // this code is clean, except the code -1 at the end
+*/
 
 /*
 // Intermediate Solution
@@ -123,13 +127,26 @@ function fearNotLetter(str) {
 // If there are no missing characters, return undefined.
 */
 
-// Practice Session 2, 11/01/2018
+// Practice Session 2, 11/02/2018
 
-// time:  mins, 11/01/2018, 6:00pm
-// debug time:  mins
-
+/*
+// time: 15 mins, 11/02/2018, 8:23am // not a bad solution
+// debug time: 0 mins
 function fearNotLetter(str) {
-  return str;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== String.fromCharCode(i + str.charCodeAt(0))) {
+      return String.fromCharCode(i + str.charCodeAt(0));
+    }
+  }
+} // though, if this is possible, I can do FP...
+// spent 60 mins trying to write a FP solution with map, filter, and reduce
+// but failed ultimately.
+*/
+
+// time:  mins
+// debug time:  mins
+function fearNotLetter(str) {
+  return;
 }
 
 console.log(fearNotLetter('abce')); // d
