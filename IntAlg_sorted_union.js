@@ -64,7 +64,7 @@ function uniteUnique(arr) {
 // time:  mins
 // debug time:  mins
 function uniteUnique(arr) {
-  return arr;
+  return arr.toLowerCase();
 }
 
 console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //[1, 3, 2, 5, 4]
