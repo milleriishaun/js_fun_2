@@ -60,6 +60,8 @@ function uniteUnique(arr) {
 }
 */
 
+// Practice Session 2
+
 //
 // time:  mins
 // debug time:  mins
