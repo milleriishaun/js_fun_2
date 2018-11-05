@@ -353,6 +353,14 @@ function diffArray(arr1, arr2) {
   return newArr;
 }
 
+// Practice Session 3
+
+// time:  mins .. 11/5/2018, pm
+// debug time:  mins
+function diffArray(arr1, arr2) {
+  return;
+}
+
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //[4]
 console.log(
   diffArray(
