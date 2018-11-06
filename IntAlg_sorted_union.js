@@ -60,7 +60,7 @@ function uniteUnique(arr) {
 }
 */
 
-// Practice Session 2
+// Practice Session 2, 11/06/2018
 
 //
 // time:  mins
