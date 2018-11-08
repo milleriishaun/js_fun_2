@@ -1,4 +1,5 @@
 // my initial solution
+// fail
 function sumPrimes(num) {
   // find all the prime numbers and store them in an array
   let arr = [1, num];
