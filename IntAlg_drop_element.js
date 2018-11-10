@@ -21,7 +21,7 @@ function dropElements(arr, func) {
 function dropElements(arr, func) {
   let index = arr.filter(item => func(item))[0]; // it's not zero
   return index !== undefined ? arr.slice(index) : [];
-}
+} // this is goodish code
 
 console.log(
   dropElements([1, 2, 3, 4], function(n) {
