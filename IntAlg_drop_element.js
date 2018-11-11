@@ -15,13 +15,50 @@ function dropElements(arr, func) {
 }
 */
 
+/*
 // my initial solution 2 ... after the 3 hints
-// time: 30 mins
-// debug time: 30 mins // this took too long
+// time: 20 mins
+// debug time: 10 mins // this took too long to think of
 function dropElements(arr, func) {
-  let index = arr.filter(item => func(item))[0]; // it's not zero
-  return index !== undefined ? arr.slice(index) : [];
+  let index = arr.indexOf(arr.filter(item => func(item))[0]);
+  return index !== -1 ? arr.slice(index) : [];
 } // this is goodish code
+*/
+
+/*
+// Basic Solution
+function dropElements(arr, func) {
+  // drop them elements.
+  var times = arr.length;
+  for (var i = 0; i < times; i++) {
+    if (func(arr[0])) {
+      break;
+    } else {
+      arr.shift();
+    }
+  }
+  return arr;
+} //note: mad at how simple this looks, need practice
+//note: I did have this at least in mind... but the 'break' missed me.
+*/
+
+/*
+// Intermediate Solution
+function dropElements(arr, func) {
+  return arr.slice(arr.findIndex(func) >= 0 ? arr.findIndex(func) : arr.length);
+} //note: I got owned by this solution. i want to practice this one-liner.
+//note: I did not know .findIndex(condition) was an option. looks great!
+*/
+
+/*
+// Advanced Solution
+function dropElements(arr, func) {
+  while (arr.length > 0 && !func(arr[0])) {
+    arr.shift();
+  }
+  return arr;
+} //note: so simple I want to die.
+*/
 
 console.log(
   dropElements([1, 2, 3, 4], function(n) {
