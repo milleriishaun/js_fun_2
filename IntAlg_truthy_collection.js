@@ -5,7 +5,7 @@ function truthCheck(collection, pre) {
   // Is everyone being true?
   return pre;
 }
-console.log(pre);
+console.log(collection);
 console.log(
   truthCheck(
     [
