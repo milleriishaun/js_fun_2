@@ -44,26 +44,34 @@ function convertToRoman(num) {
   for (let j = 0; j < arr.length - 3; j++) {
     switch (arr.slice(j, j + 4).join('')) {
       case 'CCCC':
-        console.log(arr, 'CCCC hit');
-        arr[j - 1] === 'V'
-          ? arr.splice(j - 1, 5, 'I', 'X') //, arr.splice((j, 0, 'V')))
-          : arr.splice(j + 1, 3, 'V');
-        console.log(arr, 'CCCC hit');
-        j = 0;
+        // console.log(arr, 'CCCC hit');
+        arr[j - 1] === 'D'
+          ? arr.splice(j - 1, 5, 'C', 'M') //, arr.splice((j, 0, 'V')))
+          : arr.splice(j + 1, 3, 'D');
+        // console.log(arr, 'CCCC hit');
+        j -= 4;
+        break;
       case 'XXXX':
-        console.log(arr, 'XXXX hit');
-        arr[j - 1] === 'L'
-          ? arr.splice(j - 1, 5, 'X', 'C') //, arr.splice((j, 0, 'V')))
-          : arr.splice(j + 1, 3, 'L');
-        console.log(arr, 'XXXX hit');
-        j = 0;
+        // console.log(arr, 'XXXX hit');
+        if (arr[j + 4] !== 'X') {
+          arr[j - 1] === 'L'
+            ? arr.splice(j - 1, 5, 'X', 'C') //, arr.splice((j, 0, 'V')))
+            : arr.splice(j + 1, 3, 'L');
+          // console.log(arr, 'XXXX hit');
+        } else {
+          // console.log(arr, 'XXXXX hit');
+          arr.splice(j - 3, 8, 'D');
+          // console.log(arr, 'XXXXX hit');
+        }
+        j -= 4;
+        break;
       case 'IIII':
-        console.log(arr, 'IIII hit');
+        // console.log(arr, 'IIII hit');
         arr[j - 1] === 'V'
           ? arr.splice(j - 1, 5, 'I', 'X') //, arr.splice((j, 0, 'V')))
           : arr.splice(j + 1, 3, 'V');
-        console.log(arr, 'IIII hit');
-        j = 0;
+        // console.log(arr, 'IIII hit');
+        j -= 4;
         break;
       default:
         break;
@@ -81,23 +89,23 @@ console.log(convertToRoman(12)); //"XII"
 console.log(convertToRoman(16)); //"XVI"
 console.log(convertToRoman(29)); //"XXIX"
 console.log(convertToRoman(44)); //"XLIV"
-// console.log(convertToRoman(44)); //"XLV"
-// console.log(convertToRoman(68)); //"LXVIII"
-// console.log(convertToRoman(83)); //"LXXXIII"
-// console.log(convertToRoman(97)); //"XCVII"
-// console.log(convertToRoman(99)); //"XCIX"
-// console.log(convertToRoman(400)); //"CD"
-// console.log(convertToRoman(500)); //"D"
-// console.log(convertToRoman(501)); //"DI"
-// console.log(convertToRoman(649)); //"DCXLIX"
-// console.log(convertToRoman(798)); //"DCCXCVIII"
-// console.log(convertToRoman(891)); //"DCCCXCI"
-// console.log(convertToRoman(1000)); //"M"
-// console.log(convertToRoman(1004)); //"MIV"
-// console.log(convertToRoman(1006)); //"MVI"
-// console.log(convertToRoman(1023)); //"MXXIII"
-// console.log(convertToRoman(2014)); //"MMXIV"
-// console.log(convertToRoman(3999)); //"MMMCMXCIX"
+console.log(convertToRoman(45)); //"XLV"
+console.log(convertToRoman(68)); //"LXVIII"
+console.log(convertToRoman(83)); //"LXXXIII"
+console.log(convertToRoman(97)); //"XCVII"
+console.log(convertToRoman(99)); //"XCIX"
+console.log(convertToRoman(400)); //"CD"
+console.log(convertToRoman(500)); //"D"
+console.log(convertToRoman(501)); //"DI"
+console.log(convertToRoman(649)); //"DCXLIX"
+console.log(convertToRoman(798)); //"DCCXCVIII"
+console.log(convertToRoman(891)); //"DCCCXCI"
+console.log(convertToRoman(1000)); //"M"
+console.log(convertToRoman(1004)); //"MIV"
+console.log(convertToRoman(1006)); //"MVI"
+console.log(convertToRoman(1023)); //"MXXIII"
+console.log(convertToRoman(2014)); //"MMXIV"
+console.log(convertToRoman(3999)); //"MMMCMXCIX"
 
 // Practice Session 2, 11//2018,  pm
 
