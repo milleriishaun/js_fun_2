@@ -2,8 +2,35 @@
 // time:  mins
 // debug time:  mins
 function checkCashRegister(price, cash, cid) {
-  var change;
-  // Here is your change, ma'am.
+  let cid = [
+    ['PENNY', 0],
+    ['NICKEL', 0],
+    ['DIME', 0],
+    ['QUARTER', 0],
+    ['ONE', 0],
+    ['FIVE', 0],
+    ['TEN', 0],
+    ['TWENTY', 0],
+    ['ONE HUNDRED', 0]
+  ];
+  let diff = price - cash;
+  tNeed =
+    cid[0][1] +
+    cid[1][1] +
+    cid[2][1] +
+    cid[3][1] +
+    cid[4][1] +
+    cid[5][1] +
+    cid[6][1] +
+    cid[7][1] +
+    cid[8][1];
+  for (let i = 0; i < diff * 100; i++) {
+    if (cid[8][1] > 0) {
+      diff -= cid[8][1];
+    }
+  }
+
+  let change = { status: '', change: [cid] };
   return change;
 }
 
