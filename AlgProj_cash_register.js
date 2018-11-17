@@ -29,7 +29,6 @@ function checkCashRegister(price, cash, cid) {
       diff -= cid[8][1];
     }
   }
-
   let change = { status: '', change: [cid] };
   return change;
 }
