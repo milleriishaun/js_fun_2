@@ -6,7 +6,7 @@ function checkCashRegister(price, cash, cid) {
   let savePenny = cid[0][1];
   let cidSave = cid.slice();
   let change = { status: '', change: cidSave };
-  let openChange = [ 
+  let openChange = [
     ['ONE HUNDRED', 0],
     ['TWENTY', 0],
     ['TEN', 0],
@@ -253,8 +253,8 @@ function checkCashRegister(price, cash, cid) {
   }
 
   // Loop through the denomination array
-  var change_arr = denom.reduce(function(acc, curr) {
-    var value = 0;
+  let change_arr = denom.reduce(function(acc, curr) {
+    let value = 0;
     // While there is still money of this type in the drawer
     // And while the denomination is larger than the change remaining
     while (register[curr.name] > 0 && change >= curr.val) {
@@ -291,7 +291,7 @@ function checkCashRegister(price, cash, cid) {
 // time:  mins
 // debug time:  mins
 function checkCashRegister(price, cash, cid) {
-  var change;
+  let change;
   return change;
 }
 */
