@@ -6,7 +6,7 @@ function checkCashRegister(price, cash, cid) {
   let savePenny = cid[0][1];
   let cidSave = cid.slice();
   let change = { status: '', change: cidSave };
-  let openChange = [
+  let openChange = [ 
     ['ONE HUNDRED', 0],
     ['TWENTY', 0],
     ['TEN', 0],
