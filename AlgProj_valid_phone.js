@@ -77,6 +77,7 @@ console.log(telephoneCheck('(555)5(55?)-5555')); // false
 /*
 
 // Practice Session 2 ... to be honest, IDK if I should practice this code
+// This code is easy to look up.
 
 // time:  mins
 // debug time:  mins
