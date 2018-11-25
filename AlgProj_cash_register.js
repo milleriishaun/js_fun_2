@@ -274,7 +274,6 @@ function checkCashRegister(price, cash, cid) {
 
   // If there are no elements in change_arr or we have leftover change, return
   // the string "Insufficient Funds".
-  // Get sufficient funds.
   if (change_arr.length < 1 || change > 0) {
     output.status = 'INSUFFICIENT_FUNDS';
     return output;
