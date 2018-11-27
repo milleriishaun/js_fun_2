@@ -27,7 +27,7 @@ function translatePigLatin(str) {
 */
 
 /*
-// Basic Solution // I couldn't have solved for this on my life. GL @ interviews.
+// Basic Solution // With practice I can solve this. GL @ interviews though.
 function translatePigLatin(str) {
   // Create variables to be used
   var pigLatin = '';
