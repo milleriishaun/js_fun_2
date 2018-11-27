@@ -82,6 +82,6 @@ console.log(telephoneCheck('(555)5(55?)-5555')); // false
 // time:  mins
 // debug time:  mins
 function telephoneCheck(str) {
-  return str.match(/\d\d\d/, g);
+  return str.match(/\d\d\d-\d\d\d-\d\d\d\d/, g);
 }
 */
