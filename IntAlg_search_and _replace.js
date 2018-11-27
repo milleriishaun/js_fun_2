@@ -1,16 +1,12 @@
-/*
 // my initial solution 1
 // time: 15 mins // actually solving was easy...
 function myReplace(str, before, after) {
   if (/(^[A-Z])/.test(before)) {
     //fail: needed a review of .test()
-    after = after.split('');
-    after[0] = after[0].toUpperCase(); //fail: forgot to store upperCased
-    after = after.join('');
+    after = after[0].toUpperCase() + after.slice(1); //fail: forgot to store upperCased
   }
   return str.replace(before, after);
 }
-*/
 
 /*
 // my initial solution 2
@@ -188,13 +184,13 @@ function myReplace(str, before, after) {
 */
 
 // Practice Session 3
-
+/*
 // time:  mins
 // debug time:  mins
 function myReplace(str, before, after) {
   return;
 }
-
+*/
 console.log(myReplace('Let us go to the store', 'store', 'mall')); // "Let us go to the mall"
 console.log(myReplace('He is Sleeping on the couch', 'Sleeping', 'sitting')); // "He is Sitting on the couch"
 console.log(myReplace('This has a spellngi error', 'spellngi', 'spelling')); // "This has a spelling error"
