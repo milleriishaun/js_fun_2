@@ -152,7 +152,7 @@ function uniteUnique(...arrays) {
 
 // Practice Session 2, 11/0?/2018
 // I'm going through the rest of the IntAlgs, then will go back to these practices
-// Just need a change in pace, in the aftermath of parttime job find.
+// Just need a change in pace, in the aftermath of part-time job find.
 
 //
 // time:  mins
