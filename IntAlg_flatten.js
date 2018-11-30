@@ -1,4 +1,3 @@
-/*
 // my initial solution 1// this is a slightly older solution, hard to follow
 // time: 10 mins
 // debug time: 0 mins
@@ -6,19 +5,10 @@ function steamrollArray(arr) {
   // I'm a steamroller, baby
   return arr.reduce(function(flat, toFlatten) {
     return flat.concat(
-      Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten
+      Array.isArray(toFlatten) ? steamrollArray(toFlatten) : toFlatten
     );
   }, []);
 }
-
-function flatten(arr) {
-  return arr.reduce(function(flat, toFlatten) {
-    return flat.concat(
-      Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten
-    );
-  }, []);
-}
-*/
 
 /*
 // my initial solution 2 // this is a modern solution
@@ -121,9 +111,9 @@ function steamrollArray(arr) {
 */
 
 // Practice Session 2. 11//2018,  pm
-function steamrollArray(arr) {
-  return;
-}
+// function steamrollArray(arr) {
+//   return;
+// }
 // time:  mins
 // debug time: 0 mins
 
