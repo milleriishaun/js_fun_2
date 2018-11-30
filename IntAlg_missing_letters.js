@@ -24,14 +24,7 @@ function fearNotLetter(str) {
 // my initial solution 2... after looking at the 3 hints(need ASCII)
 // time: 15 mins
 function fearNotLetter(str) {
-  let start = str[0];
-  let startx = 0;
-  for (let i = 97; i < 122; i++) {
-    if (start === String.fromCharCode(i)) {
-      startx = i;
-    }
-  }
-
+  let startx = str.charCodeAt(0);
   for (let j = 0; j < str.length; j++) {
     if (str[j] !== String.fromCharCode(startx + j)) {
       return String.fromCharCode(startx + j);
@@ -39,7 +32,7 @@ function fearNotLetter(str) {
   }
   return undefined;
 }
-*/
+/*
 
 /*
 // Basic Solution
@@ -104,7 +97,6 @@ function fearNotLetter(str) {
 //note: there would be no issue with the max and min i indices.
 */
 
-/*
 // Advanced Solution 2
 function fearNotLetter(str) {
   var allChars = '';
@@ -117,7 +109,7 @@ function fearNotLetter(str) {
 } // this finds all those letter not included, which makes it pro
 //note: to me, it is very wordy but demonstrates deep knowledge of coding
 // I should practice this one a lot because then I can expand my thinking
-
+/*
 // Code Explanation:
 // A new string allChars is created.
 // Create a regular expression notChars which selects everything except str.
@@ -147,9 +139,9 @@ function fearNotLetter(str) {
 
 // time:  mins
 // debug time:  mins
-function fearNotLetter(str) {
-  return;
-}
+// function fearNotLetter(str) {
+//   return;
+// }
 
 console.log(fearNotLetter('abce')); // d
 console.log(fearNotLetter('abcdefghjklmno')); // i

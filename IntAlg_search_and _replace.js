@@ -1,3 +1,4 @@
+/*
 // my initial solution 1
 // time: 15 mins // actually solving was easy...
 function myReplace(str, before, after) {
@@ -7,6 +8,7 @@ function myReplace(str, before, after) {
   }
   return str.replace(before, after);
 }
+*/
 
 /*
 // my initial solution 2
