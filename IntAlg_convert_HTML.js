@@ -88,7 +88,7 @@ function convertHTML(str) {
 }
 */
 
-// my initial solution 2
+// my initial solution 2 // not sure how useful this solution is...
 
 // Practice Session 2
 // time:  pm

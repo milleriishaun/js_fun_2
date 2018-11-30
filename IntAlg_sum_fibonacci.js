@@ -79,16 +79,14 @@ function sumFibs(num) {
   if (num < 0) return -1;
   if (num === 0 || num === 1) return 1;
   while ((temp = arr[0] + arr[1]) <= num) {
-    arr.unshift(temp); //NOTE: using push() requires a recalculation of the
+    arr.unshift(temp); //NOTE: using push() requires a recalculation
     //NOTE: array length each iteration, and slows down computation to a drag
     //IMPORTANT NOTE: the "temp =" in the while declaration is the final calc.
     //IMPORTANT NOTE: if temp not settled in the declaration, would do one
     //IMPORTANT NOTE: last undesirable iteration.
   }
-  console.log(arr);
   return arr.reverse().reduce((a, b) => {
     // without reverse, this fails a few FCC tests
-    console.log(a);
     return a + b * (b % 2); // taking out filter helped a bit but not enough
   });
 } //fail: there was a lot learned from this problem, great for practice

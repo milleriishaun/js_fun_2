@@ -1,4 +1,3 @@
-/*
 // my initial solution, 11/08/2018, 4:48pm
 // fail... lost track... but found track again... now fixed
 // created my very own Sieve of Eratosthenes! woot!
@@ -24,7 +23,6 @@ function sumPrimes(num) {
   }
   return arr.reduce((a, b) => a + b);
 }
-*/
 
 /*
 // Basic Solution... though, this is not basic or easy to follow
@@ -139,9 +137,9 @@ function sumPrimes(num) {
 
 // time:  mins
 // debug time:  mins
-function sumPrimes(num) {
-  return;
-}
+// function sumPrimes(num) {
+//   return;
+// }
 
 console.log(sumPrimes(10)); // 17
-// console.log(sumPrimes(977)); // 73156
+console.log(sumPrimes(977)); // 73156
