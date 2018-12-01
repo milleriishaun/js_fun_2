@@ -1,6 +1,6 @@
 /*
 // my initial solution
-// time: 40 mins // didn't understand the altitude+a
+// time: 40 mins // trip: altitude+a
 // debug time: 10 mins
 function orbitalPeriod(arr) {
   var GM = 398600.4418;
