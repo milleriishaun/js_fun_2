@@ -262,7 +262,7 @@ function checkCashRegister(price, cash, cid) {
       register[curr.name] -= curr.val;
       value += curr.val;
 
-      // Round change to the nearest hundreth deals with precision errors
+      // Round change to the nearest hundredth deals with precision errors
       change = Math.round(change * 100) / 100;
     }
     // Add this denomination to the output only if any was used.
