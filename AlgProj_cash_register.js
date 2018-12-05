@@ -283,7 +283,7 @@ function checkCashRegister(price, cash, cid) {
   output.status = 'OPEN';
   output.change = change_arr;
   return output;
-} // their solution is more involved and I'll love practicing it
+} // their solution is good and I'll love practicing it
 
 /*
 // Practice Session 2, 11//2018,  pm
