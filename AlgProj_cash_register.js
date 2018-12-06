@@ -286,7 +286,7 @@ function checkCashRegister(price, cash, cid) {
 } // their solution is good and I'll love practicing it
 
 /*
-// Practice Session 2, 11//2018,  pm
+// Practice Session 2, 12//2018,  pm
 
 // time:  mins
 // debug time:  mins

@@ -96,7 +96,7 @@ function palindrome(str) {
 // the string, and the other starts at the end of the string.
 // https://en.wikipedia.org/wiki/Cyclomatic_complexity
 
-// Practice Session 2, 11//2018,  pm
+// Practice Session 2, 12//2018,  pm
 
 // time:  mins
 // debug time:  mins
