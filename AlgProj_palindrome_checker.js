@@ -108,6 +108,7 @@ console.log(palindrome('eye')); // true
 console.log(palindrome('2eye2')); // true
 console.log(palindrome('_eye')); // true
 console.log(palindrome('race car')); // true
+console.log(palindrome('racecar')); // true
 console.log(palindrome('A man, a plan, a canal. Panama')); // true
 console.log(palindrome('never odd or even')); // true
 console.log(palindrome('My age is 0, 0 si ega ym.')); // true
