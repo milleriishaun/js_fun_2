@@ -119,3 +119,4 @@ console.log(palindrome('almostomla')); // false
 console.log(palindrome('1 eye for of 1 eye.')); // false
 console.log(palindrome('1eyeforof1eye')); // false
 console.log(palindrome('five|_/|four')); // false
+console.log(palindrome('five|/_/|four')); // false
