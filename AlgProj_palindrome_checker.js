@@ -114,6 +114,7 @@ console.log(palindrome('never odd or even')); // true
 console.log(palindrome('My age is 0, 0 si ega ym.')); // true
 console.log(palindrome('0_0 (: /- :) 0-0')); // true
 console.log(palindrome('i4i')); // true
+console.log(palindrome('nilapalin')); // true
 console.log(palindrome('not a palindrome')); // false
 console.log(palindrome('nope')); // false
 console.log(palindrome('almostomla')); // false
