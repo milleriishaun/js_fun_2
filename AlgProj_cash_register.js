@@ -225,6 +225,20 @@ console.log(
   ])
 ); //{status: "INSUFFICIENT_FUNDS", change: []}
 
+console.log(
+  checkCashRegister(19.5, 20, [
+    ['PENNY', 0.4],
+    ['NICKEL', 0],
+    ['DIME', 0],
+    ['QUARTER', 0],
+    ['ONE', 0],
+    ['FIVE', 0],
+    ['TEN', 0],
+    ['TWENTY', 0],
+    ['ONE HUNDRED', 0]
+  ])
+); //{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}
+
 // Beginner Solution
 // Create an array of objects which hold the denominations and their values
 var denom = [
