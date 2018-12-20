@@ -253,6 +253,20 @@ var denom = [
   { name: 'PENNY', val: 0.01 }
 ];
 
+console.log(
+  checkCashRegister(19.5, 20, [
+    ['PENNY', 0.4],
+    ['NICKEL', 0],
+    ['DIME', 0],
+    ['QUARTER', 0],
+    ['ONE', 0],
+    ['FIVE', 0],
+    ['TEN', 0],
+    ['TWENTY', 0],
+    ['ONE HUNDRED', 0]
+  ])
+); //{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}
+
 function checkCashRegister(price, cash, cid) {
   var output = { status: null, change: [] };
   var change = cash - price;
