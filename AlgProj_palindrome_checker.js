@@ -117,8 +117,6 @@ console.log(palindrome('i4i')); // true
 console.log(palindrome('yey')); // true
 console.log(palindrome('not a palindrome')); // false
 console.log(palindrome('nope')); // false
-console.log(palindrome('yeahno')); // false
-console.log(palindrome('almostomla')); // false
 console.log(palindrome('1 eye for of 1 eye.')); // false
 console.log(palindrome('1eyeforof1eye')); // false
 console.log(palindrome('five|_/|four')); // false
