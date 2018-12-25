@@ -114,7 +114,6 @@ console.log(palindrome('My age is 0, 0 si ega ym.')); // true
 console.log(palindrome('0_0 (: /- :) 0-0')); // true
 console.log(palindrome('i4i')); // true
 console.log(palindrome('not a palindrome')); // false
-console.log(palindrome('nope')); // false
 console.log(palindrome('1 eye for of 1 eye.')); // false
 console.log(palindrome('1eyeforof1eye')); // false
 console.log(palindrome('five|_/|four')); // false
