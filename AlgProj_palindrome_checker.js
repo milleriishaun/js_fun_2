@@ -112,7 +112,6 @@ console.log(palindrome('A Toyota! Race fast, safe car! A Toyota!')); // true
 console.log(palindrome('A nut for a jar of tuna')); // true
 console.log(palindrome('A man, a plan, a canal. Panama')); // true
 console.log(palindrome('never odd or even')); // true
-console.log(palindrome('My age is 0, 0 si ega ym.')); // true
 console.log(palindrome('0_0 (: /- :) 0-0')); // true
 console.log(palindrome('not a palindrome')); // false
 console.log(
