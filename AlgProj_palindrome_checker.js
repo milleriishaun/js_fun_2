@@ -118,4 +118,3 @@ console.log(
   palindrome('not a heroic medieval knight with a remote control helicopter')
 ); // false
 console.log(palindrome('1 eye for of 1 eye.')); // false
-console.log(palindrome('five|_/|four')); // false
