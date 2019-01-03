@@ -164,22 +164,47 @@ for (var i = 0; i < Rules.length; i++) {
 }
 
 // // Connecting with God ................,
+// The Bible as God’s word and as our highest authority.
 // Psalm 119:105,
 // 2 Tim 3:16-17,
 // 1 Tim 4:13-16,
+// Being faithful in spiritual disciplines
 // Psalm 1:2,
 // 2 Tim 2:15,
 // Eph 2:8-9,
+// Personally experiencing and testifying to God’s saving grace
 // 1 John 1:2-3,
 // Acts 26:29,
 // 1 Thess 5:16-18,
 // Phil 4:6,
+// Depending on God through prayer
 // Eph 6:18,
 // 1 Cor 10:31,
 // 1 Cor 15:58,
 // Romans 12:1,
 
+// the Bible as God’s word and as our highest authority [Psalm 119:105, 2 Tim 3:16-17, Heb 4:12]
+// Psalm 119:105
+// 2 Tim 3:16-17
+// Heb 4:12
+// personally experiencing and testifying to God’s saving grace [Eph 2:8-9, 1 John 1:2-3, Acts 26:29]
+// Eph 2:8-9
+// 1 John 1:2-3
+// Acts 26:29
+// 1 Thess 5:16-18
+// Phil 4:6
+// depending on God through prayer [1 Thess 5:16-18, Phil 4:6, Eph 6:18]
+// Eph 6:18
+// 1 Cor 10:31
+// doing all that we do as acts of worship unto God [1 Cor 10:31, 1 Cor 15:58, Romans 12:1]
+// 1 Cor 15:58
+// Romans 12:1
+
 // // Growing Up,
+// Maturing in godly character
+// Growing in love and service for others
+// Embracing the role of spiritual leaders for discipleship
+// Leaving a spiritual legacy for the next generation
 // Matt 5:16,
 // 1 Tim 4:7-8,
 // Romans 13:14,
@@ -192,7 +217,24 @@ for (var i = 0; i < Rules.length; i++) {
 // Heb 13:17,
 // Matt 28:18-20,
 
+// being faithful in spiritual disciplines [1 Tim 4:13-16, Psalm 1:2, 2 Tim 2:15]
+// maturing in godly character [Matt 5:16, 1 Tim 4:7-8, Romans 13:14]
+// growing in love and service for others [Gal 5:13-14, Eph 5:1-2, 1 John 3:18]
+// 1 Tim 4:13-16
+// Psalm 1:2
+// 2 Tim 2:15
+// Matt 5:16
+// 1 Tim 4:7-8
+// Romans 13:14
+// Gal 5:13-14
+// Eph 5:1-2
+// 1 John 3:18
+
 // // Living It Out,
+// Living out scriptural values and mandates in all areas of life
+// Forming a biblical, countercultural community
+// Honoring and emulating exemplary Christians – historical and contemporary
+
 // James 2:17,
 // 1 John 5:2-3,
 // Luke 9:57-62,
@@ -208,7 +250,26 @@ for (var i = 0; i < Rules.length; i++) {
 // Joshua 4:4-7,
 // 2 Tim 1:13-14,
 
+// living out scriptural values and mandates in all areas of life [James 2:17, 1 John 5:2-3]
+// forming a biblical, countercultural community [Acts 2:46-47, Romans 12:2, Eph 5:8-11]
+// honoring and emulating exemplary Christians - historical and contemporary [Heb 12:1, 1 Peter 5:9, 1 Cor 11:1, Phil 2:29]
+// leaving a spiritual legacy for the next generation [Joshua 4:4-7, 2 Tim 1:13-14]
+// James 2:17
+// 1 John 5:2-3
+// Acts 2:46-47
+// Romans 12:2
+// Eph 5:8-11
+// Heb 12:1
+// 1 Peter 5:9
+// 1 Cor 11:1
+// Phil 2:29
+// Joshua 4:4-7
+// 2 Tim 1:13-14
+
 // // Giving It All,
+// Living a passionate and sacrificial life
+// Generosity in giving time, money, talent and energy
+// Working hard and doing our best
 // Matt 26:6-13,
 // Romans 12:11,
 // 2 Cor 11:23-29,
@@ -219,7 +280,23 @@ for (var i = 0; i < Rules.length; i++) {
 // Acts 20:34-35,
 // Col 3:23-24,
 
+// living a passionate and sacrificial life [Matt 26:6-13, Romans 12:11, 2 Cor 11:23-29, 2 Tim 4:6-7]
+// generosity in giving time, money, talent and energy [Matt 6:19-20, 2 Cor 8:2-3, 2 Cor 9:6-7]
+// working hard and doing our best [Acts 20:34-35, Col 3:23-24]
+// Matt 26:6-13
+// Romans 12:11
+// 2 Cor 11:23-29
+// 2 Tim 4:6-7
+// Matt 6:19-20
+// 2 Cor 8:2-3
+// 2 Cor 9:6-7
+// Acts 20:34-35
+// Col 3:23-24
+
 // // Getting Close,
+// Doing life together in all its ups and downs
+// Having open homes and open lives
+// Relating to each other in love, covenantal commitment and honesty
 // Romans 12:5,
 // Gal 6:2,
 // Heb 3:13,
@@ -231,7 +308,29 @@ for (var i = 0; i < Rules.length; i++) {
 // Eph 4:15,
 // Heb 10:24-25,
 
+// doing life together in all its ups and downs [Romans 12:5, Gal 6:2, Heb 3:13]
+// having open homes and open lives [Acts 2:44-46, Acts 20:18, Romans 12:13]
+// relating to each other in love, commitment and honesty [Acts 20:20, 31, Eph 4:15, Heb 10:24-25]
+// creating and sharing memorable moments [Romans 16:3-13, 1 Thess 2:8]
+// Romans 12:5
+// Gal 6:2
+// Heb 3:13
+// Acts 2:44-46
+// Acts 20:18
+// Romans 12:13
+// Acts 20:20
+// Acts 20:31
+// Eph 4:15
+// Heb 10:24-25
+// Romans 16:3-13
+// 1 Thess 2:8
+
 // // Training Up,
+// Knowing and studying the word of God
+// Training our minds to think from a Christian perspective in all areas of life
+// Being able to articulate our faith
+// Developing our gifts and skills
+// Raising up leaders and ministers
 // Ezra 7:10,
 // 1 Tim 4:13,
 // 2 Tim 4:2,
@@ -251,7 +350,33 @@ for (var i = 0; i < Rules.length; i++) {
 // 2 Tim 2:2,
 // Eph 4:11-13,
 
+// knowing and studying the word of God [Ezra 7:10, 1 Tim 4:13, 2 Tim 4:2, 1 Peter 2:2]
+// training our minds to think from a Christian perspective in all areas of life [Romans 12:2, Col 1:16]
+// being able to articulate our faith [1 Peter 3:15, 2 Cor 10:5]
+// developing our gifts and skills [Exodus 35:10, Romans 12:6-8, 1 Cor 14:12, 1 Peter 4:10]
+// raising up leaders and ministers [Matt 28:19-20, Col 1:28-29, 2 Tim 2:2]
+// Ezra 7:10
+// 1 Tim 4:13
+// 2 Tim 4:2
+// 1 Peter 2:2
+// Romans 12:2
+// Col 1:16
+// 1 Peter 3:15
+// 2 Cor 10:5
+// Exodus 35:10
+// Romans 12:6-8
+// 1 Cor 14:12
+// 1 Peter 4:10
+// Matt 28:19-20
+// Col 1:28-29
+// 2 Tim 2:2
+
 // // Reaching Out,
+// Equipping and sending out church planting teams
+// Sharing God’s heart for the lost
+// Creative and effective evangelism here and abroad
+// Compassionate service to the needy
+
 // Acts 11:20,
 // Acts 13:2-3,
 // 2 Tim 2:2,
@@ -264,3 +389,20 @@ for (var i = 0; i < Rules.length; i++) {
 // Matt 18:5,
 // Matt 25:40,
 // James 1:27,
+
+// sharing God’s heart for the lost [Ezekiel 34:16, Matt 9:36-38, Matt 18:14, Luke 19:10]
+// creative and effective evangelism here and abroad [Acts 1:8, 1 Cor 9:22-23]
+// compassionate service to the needy [Matt 18:5, Matt 25:40, James 1:27]
+// equipping and sending out church planting teams [Acts 11:20, Acts 13:2-3, 2 Tim 2:2]
+// Ezekiel 34:16
+// Matt 9:36-38
+// Matt 18:14
+// Luke 19:10
+// Acts 1:8
+// 1 Cor 9:22-23
+// Matt 18:5
+// Matt 25:40
+// James 1:27
+// Acts 11:20
+// Acts 13:2-3
+// 2 Tim 2:2
