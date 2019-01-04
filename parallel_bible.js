@@ -163,6 +163,10 @@ for (var i = 0; i < Rules.length; i++) {
   document.write('</p>');
 }
 
+// I have discovered that overall, these changes are minor.
+// It does seem that some changes have been because of categorical error.
+// I am glad this difference is not intentional 'doing what we want you to do' texts.
+
 // // Connecting with God ................,
 // The Bible as God’s word and as our highest authority.
 // Psalm 119:105,
