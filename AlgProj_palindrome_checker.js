@@ -106,7 +106,6 @@ function palindrome(str) {
 
 console.log(palindrome('eye')); // true
 console.log(palindrome('2eye2')); // true
-console.log(palindrome('_eye')); // true
 console.log(palindrome('race car')); // true
 console.log(palindrome('A Toyota! Race fast, safe car! A Toyota!')); // true
 console.log(palindrome('A nut for a jar of tuna')); // true
