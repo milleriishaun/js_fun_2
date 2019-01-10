@@ -115,6 +115,7 @@ console.log(palindrome('0_0 (: /- :) 0-0')); // true ... palindrome busted
 console.log(palindrome('not a palindrome')); // false
 console.log(palindrome('Yanny | Laurel')); // false
 console.log(palindrome('sean | seen')); // false
+console.log(palindrome('78 | 89')); // false
 console.log(
   palindrome('not a heroic medieval knight with a remote control helicopter')
 ); // false
