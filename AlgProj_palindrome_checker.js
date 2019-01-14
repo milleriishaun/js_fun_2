@@ -116,6 +116,7 @@ console.log(palindrome('not a palindrome')); // false
 console.log(palindrome('Yanny | Laurel')); // false
 console.log(palindrome('sean | seen')); // false
 console.log(palindrome('78 | 89')); // false
+console.log(palindrome('cool | clutch')); // false
 console.log(palindrome('3.50 | phree-fiddy')); // false
 console.log(palindrome('sure would | sherwood')); // false
 console.log(
