@@ -9,7 +9,7 @@ is the potential that the keys can conflict with built-in members (such
 /* A short example of an associative array (hash table) in JavaScript
 is as follows: */
 
-var h = new Object(); // or just {}
+/* var h = new Object(); // or just {}
 h['one'] = 1;
 h['two'] = 2;
 h['three'] = 3;
@@ -20,7 +20,7 @@ for (var k in h) {
   if (h.hasOwnProperty(k)) {
     console.log('key is: ' + k + ', value is: ' + h[k]);
   }
-}
+} */
 // https://medium.com/@jschapir/cracking-the-coding-interview-hash-tables-backed-by-linked-list-a57e60885d78
 /* First, let’s define the Hash Table. A hash table is generally backed by
 an array and contains “buckets” to store data at each array index. The
@@ -35,7 +35,7 @@ List (my implementation), to store the multiple values at that index.
 This is what I implemented to today. */
 
 /* Check out the code: */
-
+/* 
 var HashTable = function(size) {
   var _list = [];
   this.size = size || 0;
@@ -88,7 +88,7 @@ var Node = function(val) {
   this.value = val;
   this.next = null;
 };
-module.exports = HashTable;
+module.exports = HashTable; */
 
 /* Hashmap summary:
 As you know, operations on data structures can take a varying amount of
@@ -172,3 +172,309 @@ The java.util.Map spec states that the value associated to that key is
 overriden. HashMap comes from Java2 collections and thus it was born a Map.
 Hashtable comes from Java 1.0 and it was "retrofitted" as a java.util.Map
 implentation in Java2. */
+
+// Showing hashmap in JS:
+// Our hash table has 2 simple methods — set(x, y) and get(x).
+/* class DumbMap {
+  // And let’s implement a very simple, inefficient way to store these
+  // key-value pairs and retrieve them later on. We first start by storing
+  // them in an internal array (remember, we can’t use {} since we are
+  // implementing {} — mind blown!)(we use constructor and set with 'this'):
+  constructor() {
+    this.list = [];
+  }
+  // get the right element from the list
+  get(x) {
+    let result;
+
+    this.list.forEach(pairs => {
+      if (pairs[0] === x) {
+        result = pairs[1];
+      }
+    });
+
+    return result;
+  }
+
+  set(x, y) {
+    this.list.push([x, y]);
+  }
+}
+
+// let m = new DumbMap();
+
+// m.set('a', 1);
+// console.log(m.get('a')); // 1
+// console.log(m.get('I_DONT_EXIST')); // undefined
+
+// The following is a benchmark test:
+let m = new DumbMap();
+m.set('x', 1);
+m.set('y', 2);
+
+console.time('with very few records in the map');
+m.get('I_DONT_EXIST');
+console.timeEnd('with very few records in the map');
+
+m = new DumbMap();
+
+for (x = 0; x < 1000000; x++) {
+  m.set(`element${x}`, x);
+}
+
+console.time('with lots of records in the map');
+m.get('I_DONT_EXIST');
+console.timeEnd('with lots of records in the map');
+ */
+// results:
+// with very few records in the map: 0.447ms
+// with lots of records in the map: 18.003ms
+
+// In our implementation, we need to loop through all the elements
+// inside this.list in order to find one with the matching key. The
+// cost is O(n), and it’s quite terrible.
+
+// Make it fast(er):
+// We need to find a way to avoid looping through our list.
+
+// Ever wondered why this data structure is called a hash table? That’s
+// because a hashing function is used on the keys that you set and get.
+// We will use this function to turn our key into an integer i, and store
+// our value at index i of our internal list. Since accessing an element, by
+// its index, from a list has a constant cost (O(1)), then the hash table
+// will also have a cost of O(1).
+
+// Let's try this code:
+
+// let hash = require('string-hash');
+
+/* class DumbMap {
+  constructor() {
+    this.list = [];
+  }
+
+  get(x) {
+    return this.list[hash(x)];
+  }
+
+  set(x, y) {
+    this.list[hash(x)] = y;
+  }
+}
+
+// The following is a benchmark test:
+let m = new DumbMap();
+m.set('x', 1);
+m.set('y', 2);
+
+console.time('with very few records in the map');
+m.get('I_DONT_EXIST');
+console.timeEnd('with very few records in the map');
+
+m = new DumbMap();
+
+for (x = 0; x < 1000000; x++) {
+  m.set(`element${x}`, x);
+}
+
+console.time('with lots of records in the map');
+m.get('I_DONT_EXIST');
+console.timeEnd('with lots of records in the map');
+ */
+// Must download dependancy: yarn add string-hash
+// Here we are using the string-hash module, which simply converts a string
+// to a numeric hash. We use it to store and fetch elements at index hash(key)
+// of our list. The results?
+
+// with very few records in the map: 0.315ms
+// with lots of records in the map: 0.230ms
+
+// That's much better!
+
+// We don’t have to loop through all elements in the list, and retrieving
+// elements from DumbMap is super fast!
+
+// Let me put this as straightforwardly as possible:
+// hashing is what makes hash tables extremely efficient.
+// No magic. Nothing more. Nada. Just a simple, clever, ingenious idea.
+
+// Picking a fast hashing function is very important. If our hash(key) runs
+// in a few seconds, our function will be quite slow regardless of its
+// complexity.
+
+// At the same time, it’s very important to make sure that our hashing
+// function doesn’t produce a lot of collisions, as they would be detrimental
+// to the complexity of our hash table.
+
+// Collisions:
+// You might think “Ah, a good hashing function never generates collisions!”:
+// well, come back to the real world and think again. Google was able to
+// produce collisions for the SHA-1 hashing algorithm, and it’s just a matter
+// of time, or computational power, before a hashing function cracks and
+// returns the same hash for 2 different inputs. Always assume your hashing
+// function generates collisions, and implement the right defense against
+// such cases.
+
+/* // Case in point, let’s try to use a hash() function that generates a lot of
+// collisions:
+
+function divide(int) {
+  int = Math.round(int / 2);
+
+  if (int > 10) {
+    return divide(int);
+  }
+
+  return int;
+}
+
+function hash(key) {
+  let h = require('string-hash')(key);
+  return divide(h);
+}
+
+// This function uses an array of 10 elements to store values, meaning
+// that elements are likely to be replaced — a nasty bug in our DumbMap:
+
+m = new DumbMap();
+
+for (x = 0; x < 1000000; x++) {
+  m.set(`element${x}`, x);
+}
+
+console.log(m.get('element0')); // 999988
+console.log(m.get('element1')); // 999988
+console.log(m.get('element1000')); // 999987
+
+// In order to resolve the issue, we can simply store multiple key-value
+// pairs at the same index. So let’s amend our hash table:
+ */
+
+// this is the old hash method, as opposed to the one we made up which was slow.
+let hash = require('string-hash');
+class DumbMap {
+  constructor() {
+    this.list = [];
+  }
+
+  get(x) {
+    let i = hash(x);
+
+    if (!this.list[i]) {
+      return undefined;
+    }
+
+    let result;
+
+    this.list[i].forEach(pairs => {
+      if (pairs[0] === x) {
+        result = pairs[1];
+      }
+    });
+
+    return result;
+  }
+
+  set(x, y) {
+    let i = hash(x);
+
+    if (!this.list[i]) {
+      this.list[i] = [];
+    }
+
+    this.list[i].push([x, y]);
+  }
+}
+
+// Need the hash function and divide there too for reference, so can't
+// comment out everything... need collision making functions there...for test
+/* function divide(int) {
+  int = Math.round(int / 2);
+
+  if (int > 10) {
+    return divide(int);
+  }
+
+  return int;
+}
+
+function hash(key) {
+  let h = require('string-hash')(key);
+  return divide(h);
+} */
+
+// As you might notice, here we fall back to our original implementation:
+// store a list of key-value pairs and loop through each of them. This is
+// going to be quite slow when there are a lot of collisions for a
+// particular index of the list.
+
+// Let’s benchmark this using our own hash() function that generates indexes
+// from 1 to 10:
+
+m = new DumbMap();
+
+for (x = 0; x < 1000000; x++) {
+  m.set(`element${x}`, x);
+}
+
+console.time('with lots of records in the map');
+m.get('I_DONT_EXIST');
+console.timeEnd('with lots of records in the map');
+
+// slow result: with lots of records in the map: 13.656ms
+
+// ...and by using the hash function from string-hash, which generates
+// random indexes:
+
+// Whoa! There’s the cost of picking the right hashing function — fast
+// enough that it doesn’t slow our execution down on its own, and good
+// enough that it doesn’t produce a lot of collisions.
+
+// "Hashtables have a O(1) complexity"
+// Well, I lied: the complexity of a hash table depends on the hashing
+// function you pick. The more collisions you generate, the more the
+// complexity tends toward O(n).
+
+// function hash(key) {
+//   return 0
+// }
+// would mean that our hash table has a complexity of O(n).
+
+// Remember:
+// a good hashing function is the key to an efficient hash table
+// — nothing more, nothing less.
+
+// Note: there is something called separate chaining and open addressing,
+// when dealing with collisions. We used separate chaining:
+// separate chaining: we store all the key-pairs that generate
+// collisions in a list and loop through them.
+// open addressing: at each index of our list we store one and one
+// only key-value pair.
+
+// FAQs (or TL;DR)
+// Does a hash table hash the values we’re storing?
+// No, keys are hashed so that they can be turned into an integer i, and
+// both keys and values are stored at position i in a list.
+
+// Do the hashing functions used by hash tables generate collisions?
+// Absolutely — so hash tables are implemented with defense strategies to
+// avoid nasty bugs.
+
+// Do hash tables use a list or a linked list internally?
+// It depends, both can work. In our examples, we use the JavaScript
+// array ([]) that can be dynamically resized:
+a = [];
+a[3] = 1;
+console.log(a);
+// [ <3 empty items>, 1 ]
+
+// Why did you pick JavaScript for the examples? JS arrays ARE hash tables!
+// For example:
+a = [];
+a['some'] = 'thing';
+console.log(a);
+// [ some: 'thing' ]
+console.log(typeof a);
+// 'object'
+
+// I know, damn JavaScript.
