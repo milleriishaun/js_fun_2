@@ -478,3 +478,35 @@ console.log(typeof a);
 // 'object'
 
 // I know, damn JavaScript.
+
+// Just write a hashtable(associative array) in Javascript!
+let h = [];
+// note: if we use let h = {}, we get h.length as undefined.
+h['first thing'] = 1;
+h['second thing'] = 2;
+h['third thing'] = 3;
+for (let k in h) {
+  if (h.hasOwnProperty(k)) {
+    console.log('key: ' + k + ', value: ' + h[k]);
+  }
+}
+console.log(h.length);
+
+var a = new Array(); // or just []
+a[0] = 0;
+a['one'] = 1;
+a['two'] = 2;
+a['three'] = 3;
+
+for (var k in a) {
+  if (a.hasOwnProperty(k)) {
+    console.log('key is: ' + k + ', value is: ' + a[k]);
+  }
+}
+console.log(a.length);
+// Oddly, the length is reported to be 1, yet four keys are printed.
+// That's because we are manipulating both the array elements and the
+// underlying object. That's just the flexibility of JavaScript shining
+// through (and confusing us). The square bracket notation (i.e., []) is
+// overloaded. When the key is numeric, we are assigning elements to the
+// array. Otherwise, we are assigning members to the object.
