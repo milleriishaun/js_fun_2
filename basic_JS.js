@@ -72,3 +72,7 @@ console.log({} + [] + {} + [1]); // '0[object Object]1'
 console.log(!+[] + [] + ![]); // 'truefalse'
 console.log(new Date(0) - 0); // 0
 console.log(new Date(0) + 0); // 'Thu Jan 01 1970 02:00:00(EET)0'
+console.log({} + [] + {} + [1]);
+console.log({} + []);
+console.log({} + [] + {});
+console.log({} + {});
