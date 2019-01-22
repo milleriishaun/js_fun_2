@@ -132,3 +132,13 @@ console.log(hCy(70, 60)); // 420000l
 // functional programming. But I assure you with time⌚ and constant
 // practice🏪, you will start to get the hang of it and see how worthwhile
 // it is 😘.
+
+function currying(base) {
+  return function(num) {
+    return num + base;
+  };
+}
+let a = currying(30);
+console.log(a(20));
+console.log(a(10));
+console.log(a(5));
