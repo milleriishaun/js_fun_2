@@ -142,3 +142,5 @@ let a = currying(30);
 console.log(a(20));
 console.log(a(10));
 console.log(a(5));
+console.log((4).toString(2));
+console.log(typeof (4).toString(2));
