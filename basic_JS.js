@@ -76,3 +76,5 @@ console.log({} + [] + {} + [1]);
 console.log({} + []);
 console.log({} + [] + {});
 console.log({} + {});
+console.log((4).toString(2));
+console.log(typeof (4).toString(2));
