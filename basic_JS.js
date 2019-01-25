@@ -85,3 +85,7 @@ console.log((0).toString(2));
 console.log((-0).toString(2));
 console.log((-1).toString(2));
 console.log((-2).toString(2));
+console.log(2.0 == '2');
+console.log('2' == new Boolean(true));
+console.log(new Boolean(true) == '1');
+console.log(((2.0 == '2') == new Boolean(true)) == '2');

@@ -142,3 +142,41 @@ let a = currying(30);
 console.log(a(20));
 console.log(a(10));
 console.log(a(5));
+
+function generator(input) {
+  let index = 0;
+  return {
+    food: 'cake',
+    next: function() {
+      if (index < input.length) {
+        index++;
+        return input[index - 1];
+      }
+      return '';
+    }
+  };
+}
+var text = generator('brownie');
+console.log(text.next());
+console.log(text.next());
+console.log(text.next());
+
+text = generator('cookie');
+console.log(text.next());
+console.log(text.next());
+console.log(text.next());
+console.log(text.hasOwnProperty('food')); //true
+console.log(text instanceof generator); //false... maybe because no constructor
+console.log('text instanceof generator: ', !(text instanceof generator)); //true... for some reason
+console.log(text instanceof Object); //true
+console.log(Object.getPrototypeOf(generator)); //[Function]
+console.log(generator.prototype); //generator ()
+
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+var newCar = new Car('Honda', 'City', 2007);
+console.log(newCar instanceof Car); //true
+console.log(newCar instanceof Object); //true
