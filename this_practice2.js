@@ -79,3 +79,79 @@ Function.prototype.bind =
       return self.apply(context, arguments);
     };
   };
+
+// Now, we play with classes and understanding prototype inheritance
+var animalGroups = {
+  MAMMAL: 1,
+  REPTILE: 2,
+  AMPHIBIAN: 3,
+  INVERTEBRATE: 4
+};
+function Animal(name, type) {
+  this.name = name;
+  this.type = type;
+}
+var dog = new Animal('dog', animalGroups.MAMMAL);
+var crocodile = new Animal('crocodile', animalGroups.REPTILE);
+
+Animal.prototype.shout = function() {
+  console.log(this.name + 'is ' + this.sound + 'ing...');
+};
+
+function Dog(name, type) {
+  Animal.call(this, name, type);
+  this.sound = 'bow';
+}
+
+// var pet = Dog('germanShepard', animalGroups.MAMMAL);
+// console.log(pet); // returns Dog {name: "germanShepard", type: 1, sound: "bow"}
+// console.log(pet.shout()); // error
+
+// Link prototype chains(add class's prototype = Object.create(parent prototype))
+// (also, use 'new' in creating the instance of the class you're interested in)
+Dog.prototype = Object.create(Animal.prototype);
+var pet = new Dog('germanShepard', animalGroups.MAMMAL);
+// Now shout method is available
+pet.shout(); // germanShepard is bowing... (now, no error)
+console.log(pet.constructor); // returns [Function: Animal]
+console.log(Dog.prototype.constructor); // returns [Function: Animal]
+Dog.prototype.constructor = Dog; //Always set child class constructor to
+// itself for getting the right identity of its objects
+console.log(pet.constructor); // returns [Function: Dog]
+console.log(Dog.prototype.constructor); // returns [Function: Dog]
+console.log(pet.hasOwnProperty(animalGroups.MAMMAL));
+console.log(pet.hasOwnProperty(animalGroups));
+console.log(pet.type);
+console.log(pet['type']);
+for (let prop in pet) {
+  console.log('property:', prop);
+}
+
+let fruit = {
+  f1: 'apple',
+  f2: 'orange',
+  f3: 'banana',
+  f4: 'cherry',
+  f5: 'pomegranate'
+};
+
+function Sugar(name, flavor) {
+  this.name = name;
+  this.flavor = flavor;
+}
+
+Sugar.prototype.label = function() {
+  console.log(
+    this.name + 'is a ' + this.flavor + ' flavored ' + this.sweet + '!'
+  );
+};
+
+function Candy(type, name) {
+  Sugar.call(this, name, type);
+  this.sweet = 'candy';
+}
+
+//Link the prototypes
+Candy.prototype = Object.call(Sugar.prototype);
+let edibleSugar = new Candy('JollyRancher', fruit.f1);
+console.log(edibleSugar.label);
