@@ -155,3 +155,4 @@ function Candy(type, name) {
 Candy.prototype = Object.call(Sugar.prototype);
 let edibleSugar = new Candy('JollyRancher', fruit.f1);
 console.log(edibleSugar.label);
+console.log(edibleSugar);
