@@ -128,8 +128,8 @@ for (let prop in pet) {
 }
 
 let fruit = {
-  f1: 'apple',
-  f2: 'orange',
+  f1: 'grape',
+  f2: 'coconut',
   f3: 'banana',
   f4: 'cherry',
   f5: 'pomegranate'
@@ -142,17 +142,18 @@ function Sugar(name, flavor) {
 
 Sugar.prototype.label = function() {
   console.log(
-    this.name + 'is a ' + this.flavor + ' flavored ' + this.sweet + '!'
+    this.name + ' is a ' + this.flavor + ' flavored ' + this.sweet + '!'
   );
+  return '';
 };
 
-function Candy(type, name) {
-  Sugar.call(this, name, type);
+function Candy(name, flavor) {
+  Sugar.call(this, name, flavor);
   this.sweet = 'candy';
 }
 
 //Link the prototypes
-Candy.prototype = Object.call(Sugar.prototype);
+Candy.prototype = Object.create(Sugar.prototype);
 let edibleSugar = new Candy('JollyRancher', fruit.f1);
-console.log(edibleSugar.label);
+console.log(edibleSugar.label());
 console.log(edibleSugar);
