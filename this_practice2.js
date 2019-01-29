@@ -144,7 +144,7 @@ Sugar.prototype.label = function() {
   console.log(
     this.name + ' is a ' + this.flavor + ' flavored ' + this.sweet + '!'
   );
-  return '';
+  return false;
 };
 
 function Candy(name, flavor) {
@@ -154,6 +154,7 @@ function Candy(name, flavor) {
 
 //Link the prototypes
 Candy.prototype = Object.create(Sugar.prototype);
+Candy.prototype.constructor = Candy;
 let edibleSugar = new Candy('JollyRancher', fruit.f1);
 console.log(edibleSugar.label());
 console.log(edibleSugar);
