@@ -144,17 +144,37 @@ Sugar.prototype.label = function() {
   console.log(
     this.name + ' is a ' + this.flavor + ' flavored ' + this.sweet + '!'
   );
-  return false;
+  let stringIng = 'Ingredients: ';
+  let stringCon = 'May Contain: ';
+  for (let i = 0; i < this.contents.length; i++) {
+    stringIng += this.contents[i];
+    if (i < this.contents.length - 1) {
+      stringIng += ', ';
+    }
+  }
+  for (let j = 0; j < this.allergens.length; j++) {
+    stringCon += this.allergens[j];
+    if (j < this.allergens.length - 1) {
+      stringCon += ', ';
+    }
+  }
+  console.log(stringIng);
+  console.log(stringCon);
+  return '';
 };
+
+Sugar.prototype.nutrition = function() {};
 
 function Candy(name, flavor) {
   Sugar.call(this, name, flavor);
   this.sweet = 'candy';
+  this.contents = ['glucose', 'maltodextrine', 'whey', 'cocao'];
+  this.allergens = ['milk', 'nuts'];
 }
 
 //Link the prototypes
 Candy.prototype = Object.create(Sugar.prototype);
 Candy.prototype.constructor = Candy;
 let edibleSugar = new Candy('JollyRancher', fruit.f1);
-console.log(edibleSugar.label());
 console.log(edibleSugar);
+console.log(edibleSugar.label());
