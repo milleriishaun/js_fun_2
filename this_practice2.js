@@ -177,5 +177,4 @@ Candy.prototype = Object.create(Sugar.prototype);
 Candy.prototype.constructor = Candy;
 let edibleSugar = new Candy('JollyRancher', fruit.f1);
 console.log(edibleSugar);
-console.log(edibleSugar);
 console.log(edibleSugar.label());
