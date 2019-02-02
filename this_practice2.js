@@ -168,7 +168,7 @@ Sugar.prototype.nutrition = function() {};
 function Candy(name, flavor) {
   Sugar.call(this, name, flavor);
   this.sweet = 'candy';
-  this.contents = ['glucose', 'maltodextrine', 'whey', 'cocao'];
+  this.contents = ['glucose', 'maltodextrine', 'whey', 'cocao', 'fructose'];
   this.allergens = ['milk', 'nuts'];
 }
 
