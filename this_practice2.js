@@ -8,7 +8,7 @@ console.log(spacify('hello world'));
 String.prototype.spacify = function() {
   return this.split('').join(' ');
 };
-console.log('hello world'.spacify())
+console.log('hello world'.spacify());
 
 // Q: Difference between a function expression and a function declaration.
 // A function declaration is hoisted before any other code runs, and accessible
@@ -177,6 +177,8 @@ Candy.prototype = Object.create(Sugar.prototype);
 Candy.prototype.constructor = Candy;
 let edibleSugar = new Candy('JollyRancher', fruit.f1);
 let edibleSugar2 = new Candy('Hi-Chew', fruit.f4);
+let edibleSugar3 = new Candy('Smarties', fruit.f5);
 console.log(edibleSugar);
 console.log(edibleSugar.label());
 console.log(edibleSugar2.label());
+console.log(edibleSugar3.label());
