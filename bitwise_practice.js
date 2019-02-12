@@ -285,3 +285,71 @@ if (myBitNumber == (myBitNumber | (HAS_FOO2 | HAS_FOO4))) {
 if (myBitNumber == (myBitNumber | (HAS_FOO2 | HAS_FOO3 | HAS_FOO4))) {
   // False
 }
+
+// From MDN, easily forgettable bitmask automation
+// Automate Mask CreationSection
+// You can create multiple masks from a set of Boolean values, like this:
+
+function createMask() {
+  var nMask = 0,
+    nFlag = 0,
+    nLen = arguments.length > 32 ? 32 : arguments.length;
+  for (nFlag; nFlag < nLen; nMask |= arguments[nFlag] << nFlag++);
+  return nMask;
+}
+var mask1 = createMask(true, true, false, true); // 11, i.e.: 1011
+var mask2 = createMask(false, false, true); // 4, i.e.: 0100
+var mask3 = createMask(true); // 1, i.e.: 0001
+// etc.
+
+console.log(mask1); // prints 11, i.e.: 1011
+
+// Reverse algorithm: an array of booleans from a maskSection
+// If you want to create an Array of Booleans from a mask you can use this code:
+
+function arrayFromMask(nMask) {
+  // nMask must be between -2147483648 and 2147483647
+  if (nMask > 0x7fffffff || nMask < -0x80000000) {
+    throw new TypeError('arrayFromMask - out of range');
+  }
+  for (
+    var nShifted = nMask, aFromMask = [];
+    nShifted;
+    aFromMask.push(Boolean(nShifted & 1)), nShifted >>>= 1
+  );
+  return aFromMask;
+}
+
+var array1 = arrayFromMask(11);
+var array2 = arrayFromMask(4);
+var array3 = arrayFromMask(1);
+
+console.log('[' + array1.join(', ') + ']');
+// prints "[true, true, false, true]", i.e.: 11, i.e.: 1011
+// You can test both algorithms at the same time…
+
+var nTest = 19; // our custom mask
+var nResult = createMask.apply(this, arrayFromMask(nTest));
+
+console.log(nResult); // 19
+// For didactic purpose only (since there is the Number.toString(2) method), we
+// show how it is possible to modify the arrayFromMask algorithm in order
+// to create a String containing the binary representation of a Number, rather
+// than an Array of Booleans:
+
+function createBinaryString(nMask) {
+  // nMask must be between -2147483648 and 2147483647
+  for (
+    var nFlag = 0, nShifted = nMask, sMask = '';
+    nFlag < 32;
+    nFlag++, sMask += String(nShifted >>> 31), nShifted <<= 1
+  );
+  return sMask;
+}
+
+var string1 = createBinaryString(11);
+var string2 = createBinaryString(4);
+var string3 = createBinaryString(1);
+
+console.log(string1);
+// prints 00000000000000000000000000001011, i.e. 11
