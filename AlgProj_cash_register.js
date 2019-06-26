@@ -17,6 +17,7 @@ function checkCashRegister(price, cash, cid) {
     ['NICKEL', 0],
     ['PENNY', 0.01]
   ]; //fail: cheated with a penny
+  // edit from other comp
   let total_cid =
     cidSave[0][1] +
     cidSave[1][1] +
