@@ -2,6 +2,9 @@
 // my initial solution //fail: horrible solution that I'm glad to improve on
 // time: 300 mins //could not reproduce w/o error, ugly solution
 // debug time: 30 mins
+
+// edit3 from c2
+
 function checkCashRegister(price, cash, cid) {
   let savePenny = cid[0][1];
   let cidSave = cid.slice();
